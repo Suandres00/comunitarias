@@ -41,19 +41,6 @@ const Footer = () => (
           </a>
         </nav>
       </div>
-      <div className="col-span-12 md:col-span-4 flex flex-col items-start md:items-end gap-6">
-        <div className="flex gap-4">
-          <a className="p-2 technical-border hover:bg-surface-variant transition-colors" href="#">
-            <span className="material-symbols-outlined">share</span>
-          </a>
-          <a className="p-2 technical-border hover:bg-surface-variant transition-colors" href="#">
-            <span className="material-symbols-outlined">mail</span>
-          </a>
-          <a className="p-2 technical-border hover:bg-surface-variant transition-colors" href="#">
-            <span className="material-symbols-outlined">location_on</span>
-          </a>
-        </div>
-      </div>
       <div className="col-span-12 border-t border-outline-variant pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="font-body-md text-body-md text-secondary">
           © 2026 Karú Mapú. Madera Plástica Pampeana. Transformamos ideas en proyectos con impacto ambiental real.

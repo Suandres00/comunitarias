@@ -165,7 +165,7 @@ const CustomProposalPage = () => {
           </h2>
           <a
             className="inline-flex items-center gap-4 border border-primary px-12 py-5 font-label-md text-label-md text-primary hover:bg-primary hover:text-on-primary transition-all group"
-            href="https://wa.me/your-number"
+            href="https://api.whatsapp.com/send?phone=542954217616"
             target="_blank"
             rel="noopener noreferrer"
           >
