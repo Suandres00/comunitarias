@@ -181,4 +181,4 @@ const CustomProposalPage = () => {
   )
 }
 
-export default CustomPropo
+export default CustomProposalPage

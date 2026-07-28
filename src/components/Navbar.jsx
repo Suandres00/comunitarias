@@ -1,29 +1,32 @@
 import { Link, useLocation } from 'react-router-dom'
+import logo from '../assets/logo-KARUMAPU.svg'
 
 const Navbar = () => {
   const location = useLocation()
   const isActive = (path) => location.pathname === path
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-background/90 backdrop-blur-md border-b border-outline-variant">
+    <header className="fixed top-0 left-0 w-full z-50 !bg-[#235E34]/70 backdrop-blur-md border-b border-outline-variant">
       <nav className="flex justify-between items-center h-20 px-8 max-w-[1280px] mx-auto">
-        <Link to="/" className="font-headline-md text-headline-md font-bold text-primary hover:opacity-80 transition-opacity">
-          Karú Mapú
+        <Link to="/" className='flex items-center'>
+          <img
+            src={logo}
+            alt="Karú Mapú Logo"
+            className="h-10 w-auto object-contain"
+          />
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
           <Link
-            className={`font-label-md text-label-md transition-colors ${
-              isActive('/') ? 'text-primary font-bold border-b-2 border-primary' : 'text-secondary hover:text-primary'
-            }`}
+            className={`font-label-md text-label-md text-primary transition-colors ${isActive('/') ? 'border-b-2 border-primary' : ''
+              }`}
             to="/"
           >
             Inicio
           </Link>
           <Link
-            className={`font-label-md text-label-md transition-colors ${
-              isActive('/nosotros') ? 'text-primary font-bold border-b-2 border-primary' : 'text-secondary hover:text-primary'
-            }`}
+            className={`font-label-md text-label-md text-primary transition-colors ${isActive('/nosotros') ? 'border-b-2 border-primary' : ''
+              }`}
             to="/nosotros"
           >
             Sobre Nosotros
@@ -31,11 +34,9 @@ const Navbar = () => {
 
           <div className="relative group">
             <Link
-              className={`font-label-md text-label-md transition-colors flex items-center gap-1 ${
-                isActive('/productos') || isActive('/productos-a-medida')
-                  ? 'text-primary font-bold border-b-2 border-primary'
-                  : 'text-secondary hover:text-primary'
-              }`}
+              className={`font-label-md text-label-md transition-colors flex items-center gap-1 ${isActive('/productos') || isActive('/productos-a-medida')
+                ? 'border-b-2 border-primary' : ''
+                }`}
               to="/productos"
             >
               Productos
@@ -62,9 +63,8 @@ const Navbar = () => {
           </div>
 
           <Link
-            className={`font-label-md text-label-md transition-colors ${
-              isActive('/servicios') ? 'text-primary font-bold border-b-2 border-primary' : 'text-secondary hover:text-primary'
-            }`}
+            className={`font-label-md text-label-md text-primary transition-colors ${isActive('/servicios') ? 'border-b-2 border-primary' : ''
+              }`}
             to="/servicios"
           >
             Servicios

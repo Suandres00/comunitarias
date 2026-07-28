@@ -1,4 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
+import { FaInstagram } from 'react-icons/fa';
+import { FaWhatsapp } from 'react-icons/fa';
+import { FaFacebook } from 'react-icons/fa';
 
 const HomePage = () => {
   const navigate = useNavigate()
@@ -125,6 +128,58 @@ const HomePage = () => {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+      {/* Idea Banner */}
+      <section className="py-20 px-8">
+        <div className="max-w-[1280px] mx-auto bg-background border border-primary p-12 md:p-16 flex flex-col md:flex-row justify-between items-center gap-8">
+          <div>
+            <h2 className="font-headline-lg text-headline-lg mb-2">
+              ¿Tenes una idea para realizar con madera plástica?
+            </h2>
+            <p className="text-secondary font-body-md">
+              Estamos listos para transformar tus planos en realidades tangibles.
+            </p>
+          </div>
+          <Link
+            to="/"
+            className="bg-primary text-on-primary px-10 py-4 font-label-md text-label-md hover:opacity-90 whitespace-nowrap"
+          >
+            Contanos por acá!
+          </Link>
+        </div>
+      </section>
+
+      {/* Social Media Section */}
+      <section className="py-20 text-center">
+        <p className="font-label-md text-label-md uppercase tracking-[0.2em] mb-10 text-secondary">
+          Nuestras Redes Sociales
+        </p>
+        <div className="flex justify-center gap-8">
+          <a
+            href="https://www.facebook.com/profile.php?id=61575559944763#"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-on-primary hover:scale-110 transition-transform"
+          >
+           <FaFacebook className="w-8 h-8 text-on-primary" />
+          </a>
+          <a
+            href="https://www.instagram.com/karumapulp/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-on-primary hover:scale-110 transition-transform"
+          >
+            <FaInstagram className="w-8 h-8 text-on-primary" />
+          </a>
+          <a
+            href="https://api.whatsapp.com/send?phone=542954217616"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-on-primary hover:scale-110 transition-transform"
+          >
+            <FaWhatsapp className="w-8 h-8 text-on-primary" />
+          </a>
         </div>
       </section>
     </div>

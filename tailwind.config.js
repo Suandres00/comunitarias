@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#f9f9f9',
+        background: '#ffffff',
         'surface-variant': '#e2e2e2',
         'on-error': '#ffffff',
         'surface-container': '#eeeeee',
