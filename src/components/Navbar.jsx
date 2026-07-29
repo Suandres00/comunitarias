@@ -6,7 +6,7 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 !bg-[#235E34]/70 backdrop-blur-md border-b border-outline-variant">
+    <header className="fixed top-0 left-0 w-full z-50 !bg-[#235E34]/90 backdrop-blur-md border-b border-outline-variant">
       <nav className="flex justify-between items-center h-20 px-8 max-w-[1280px] mx-auto">
         <Link to="/" className='flex items-center'>
           <img
