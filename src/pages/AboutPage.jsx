@@ -26,7 +26,7 @@ const AboutPage = () => (
           <div className="relative aspect-[4/3] bg-surface-container-high blueprint-border flex items-center justify-center overflow-hidden">
             <img
               className="w-full h-full object-cover"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyiB2swjbKbCXLbdFR0_UHGCoQpC8we2B16ZwiI2_JeNHzdjxOI92K1CGeCOZfzW6GGUfM63y1nAYIaCQqehNidQe2rsPT_LFRfR_FajaAX1-pCGLjq9VIpDaSG24MnDm2G_s9-TpfhEOaSl2wPagM6rTZMETBqwH-z9QxgJajFlniEd0oLKzhi3vorp5cZ5YwSBlbcVyhz8s-i6w8BI2uLJ8L4oFqHndLlUYpBL2Z8pCxBvrU_iF5LQrsG_UGICAEGSjs8JJ_Bg"
+              src="https://www.aeuroweb.com/wp-content/uploads/2024/11/La-importancia-de-fotos-en-pagina-web-1030x539.jpg"
               alt="Nuestra Historia"
             />
           </div>

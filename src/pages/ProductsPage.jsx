@@ -18,14 +18,14 @@ const ProductsPage = () => {
             <div className="aspect-square bg-surface-container-low overflow-hidden technical-border transition-all group-hover:industrial-shadow mb-6 flex items-center justify-center">
               <img
                 className="w-full h-full object-cover grayscale transition-transform duration-500 group-hover:scale-105"
-                src={p.img}
+                src={"https://www.aeuroweb.com/wp-content/uploads/2024/11/La-importancia-de-fotos-en-pagina-web-1030x539.jpg"}
                 alt={p.title}
               />
             </div>
             <div className="flex flex-col gap-1">
               <span className="font-label-md text-label-md text-secondary uppercase tracking-widest">{p.code}</span>
               <h3 className="font-headline-md text-headline-md text-primary">{p.title}</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant">{p.desc}</p>
+              <p className="font-body-md text-body-md text-on-surface-variant">{"Descripcion del producto"}</p>
             </div>
           </div>
         ))}

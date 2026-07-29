@@ -19,7 +19,7 @@ const CustomProposalPage = () => {
             <div className="relative w-full aspect-video grayscale group">
               <img
                 className="w-full h-full object-cover shadow-2xl transition-transform duration-700 group-hover:scale-105"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkbO0CmfTLexAOA4RQ0Q1cl-WNRqYqnIV_GkDU_2EqYz3x4m1Smr4zjd0MC0DhXSlCYstKMXp5BDrfHAkw4nqCeez72sM6G88aP616BCiuYLVRgIxP1rzzb3nArhzFDZ0EeBBv7TLJkJv8b-IkE85XNZ1oOjGOTGNz5yQSl_zxoJmB5q0aoC42J8H3jHksWW7KvlqLL4VQg0KiIifDCgu35LK1ISeqYsuLlxnHNqQUeDHH1ZB4DG0U0rMZXNbx-o1xIj8MOWfTLw"
+                src="https://www.aeuroweb.com/wp-content/uploads/2024/11/La-importancia-de-fotos-en-pagina-web-1030x539.jpg"
                 alt="Detalle madera plástica"
               />
             </div>
@@ -96,16 +96,16 @@ const CustomProposalPage = () => {
             <div className="aspect-square bg-surface-container relative mb-6 overflow-hidden">
               <img
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMty0NTRwxx-DIadwUPY6HLsd9Ht8iRAVrvK3bcnDJVym_2yUWMNNrkm23wM59Zp7iGYsDx7ROabmMUb-azhWW1-aKeP4auNoAQfR2QDB_QUkGKAKqz49ae4VLh_egeke4AvI-WzDfU-jGAmc1Z9a0aW93heNCvqz3ctDm0YF3HSZbz3gHYSigkhvAal_B8L6IvHXYZOVyDtUVztS09VREn_9CStB3lFk7t4ubLNYaW2K2X-gxvNtvKUgGWMgWanfqdBoBmZtuBA"
+                src="https://www.aeuroweb.com/wp-content/uploads/2024/11/La-importancia-de-fotos-en-pagina-web-1030x539.jpg"
                 alt="Producto 1"
               />
             </div>
             <h4 className="font-headline-md text-headline-md mb-1">Producto 1</h4>
             <p className="font-label-md text-label-md text-secondary uppercase opacity-70">
-              Desarrollo Estructural 01
+             KM-V01
             </p>
             <p className="font-body-md text-body-md text-secondary mt-2">
-              Breve descripcion detallando el alcance técnico del proyecto y materiales utilizados.
+              Breve descripcion del producto.
             </p>
           </div>
 
@@ -114,16 +114,16 @@ const CustomProposalPage = () => {
             <div className="aspect-square bg-surface-container relative mb-6 overflow-hidden">
               <img
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcm4GaunTWtLE1a_LtvXlYS8u9TJR9GyHiCDFZpJllKahb4j509NIOe4SPWxAwQL7VjwIaIu4fz2ngacvbANitQqlpw2SiCyJR_GWUkaYD8kiYGGQh3-X4ekhZPx_YbF8Aso5Ctyb0Ah0sCa2qIcgWbGU1ERuku34Bhk9AHl3lQT99K6G8yZ2DeKYjKemNdppWiAmvLRbaWv45XPghscNCyFEAtu_b1QPW7GRAsjCGpcCM3qRhGNbN9Ir9gYE0i-7lisUi157KCg"
+                src="https://www.aeuroweb.com/wp-content/uploads/2024/11/La-importancia-de-fotos-en-pagina-web-1030x539.jpg"
                 alt="Producto 2"
               />
             </div>
             <h4 className="font-headline-md text-headline-md mb-1">Producto 2</h4>
             <p className="font-label-md text-label-md text-secondary uppercase opacity-70">
-              Perfiles Especiales 02
+              KM-V02
             </p>
             <p className="font-body-md text-body-md text-secondary mt-2">
-              Breve descripcion sobre la versatilidad de nuestros perfiles en aplicaciones no convencionales.
+              Breve descripcion del producto.
             </p>
           </div>
 
@@ -132,16 +132,16 @@ const CustomProposalPage = () => {
             <div className="aspect-square bg-surface-container relative mb-6 overflow-hidden">
               <img
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-V0Ih-9eeT0KaXicGPgQ6iOyBmTY4YJ-f_A4PHnMGmMT5pAt33x6BuLOb6jEsRkfHboiugPKSnDybxv9m0ZQYi8rev-HUwMBxB0IhvA8pBRzIc_Yf90p4794J6hkuNcMS-tG3HMIiSLEpjz2t4dd7Xc7X59IzfauChR9p3awXIfwYEXvEyuBDp2Nte_iKWH13qQ1NCOhZwqnuRvbRY1LDnAjCb9XTawEFpmqDmmG-GZLNYk6D78R_OfcfFEGgVYYIqedNz3WpcA"
+                src="https://www.aeuroweb.com/wp-content/uploads/2024/11/La-importancia-de-fotos-en-pagina-web-1030x539.jpg"
                 alt="Producto 3"
               />
             </div>
             <h4 className="font-headline-md text-headline-md mb-1">Producto 3</h4>
             <p className="font-label-md text-label-md text-secondary uppercase opacity-70">
-              Infraestructura Urbana 03
+              KM-V03
             </p>
             <p className="font-body-md text-body-md text-secondary mt-2">
-              Breve descripcion sobre cómo transformamos ideas urbanas en realidades tangibles y duraderas.
+              Breve descripcion del producto.
             </p>
           </div>
         </div>

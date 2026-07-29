@@ -18,7 +18,7 @@ const HomePage = () => {
         <div className="relative z-10 text-center max-w-4xl px-8">
           <h1 className="font-display-lg text-display-lg md:text-[80px] mb-6 tracking-tight">Karú Mapú</h1>
           <p className="font-headline-md text-headline-md text-secondary mb-12 max-w-2xl mx-auto">
-            Transformamos residuos plásticos en soluciones que vuelven al territorio.
+            Madera Plástica Pampeana.
           </p>
           <button className="inline-block bg-primary text-on-primary px-12 py-4 font-label-md text-label-md uppercase tracking-widest hover:bg-secondary transition-all">
             Contactar
@@ -49,7 +49,7 @@ const HomePage = () => {
             <div className="bg-surface-container aspect-video overflow-hidden border border-outline-variant relative group">
               <img
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX5hDqAYl7biUZIldfP4Vd2raGqt52HNIbZdWyIgCNEYBaFhC6_BePJFUAvIxGwNZ6GwvSgDOjpwZDXY3r5oKDHn8OpZULGmjbdHJHbQpw70_Oe-xUNwkUThTTo6uD1NUprI1MIaDXJzVK3IKGUxzz-T5pPV-XwKmCqsNsNEa3NKk6QCVJf0-9AcP5um0do6lNEdSofPHqLIZ8mPcW4C-pq4OryqQOL6liofcLhvkqFoi73lyzKt9TNGfUTayDprZFoNxrh38kKA"
+                src="https://www.aeuroweb.com/wp-content/uploads/2024/11/La-importancia-de-fotos-en-pagina-web-1030x539.jpg"
                 alt="Arquitectura Madera Plástica"
               />
             </div>
@@ -79,7 +79,7 @@ const HomePage = () => {
               <div className="bg-primary aspect-square overflow-hidden mb-6 flex items-center justify-center p-12">
                 <img
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqwO7G1aamvOd0aBCzTIAEj5EH_ow3W7hPFXxqJxlsIxrlPZQy5cp5QFEbEBEHECo-aEF-MBU2Er-uVw26-mLb9a-Mb_-4ZxP85hYUfjPHDSbrLqCNrZHGyMNg3uet7siTeoNdVBSZ0sZ_C-88znX8_OFbdxwEjsffeuezHCAcZEyBFQKqPs9DZ9E3oxUe_mt4UmvS2ymjgUDJkc_9iJTY_pNss-vb6gpR9qakhdH1vjqHPRpVP-vXTdUuPdYhZkYKxvAeCOM3PA"
+                  src="https://www.aeuroweb.com/wp-content/uploads/2024/11/La-importancia-de-fotos-en-pagina-web-1030x539.jpg "
                   alt="Juego Jardín"
                 />
               </div>
@@ -90,7 +90,7 @@ const HomePage = () => {
               <div className="bg-primary aspect-square overflow-hidden mb-6 flex items-center justify-center p-12">
                 <img
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAycqf4bJY75_7yRdObMiVWrWivrubkkLCLlFPO6VwEr_3tW_4iVoxgzPMYia2yaTIbmknAQLt-XCJ8XDTeKtH4FBSRUobcmDX91zGXgzhzCfHqvNcm2yDOBPHkKanwA401a-AFsuc-XZHr9m9dzk9iVG2L34-0zFw5NsOBF_dZcm8D1i5htQOWwG60dQ7_6UG2EIhpGy2-6SRAF5XA_Lf3lzzfAHEsPUTfMmL6AQWRoRU2gACWMkyeBpVdo0Xurq2IH-rRRP7c2g"
+                  src="https://www.aeuroweb.com/wp-content/uploads/2024/11/La-importancia-de-fotos-en-pagina-web-1030x539.jpg"
                   alt="Mesa Ratona"
                 />
               </div>
@@ -108,7 +108,7 @@ const HomePage = () => {
               <div className="bg-surface-container-lowest/10 p-1 border border-on-primary/20 aspect-square">
                 <img
                   className="w-full h-full object-cover grayscale brightness-125"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEaYJ0tE5HH-9gxPeIXgpzbsnKYAX7tRRRFdck3tZts291POJvdTY8a6fLp_KmUTOGgq2wLEmDIFjMRl3bI3HaCVwLStrKtyxwb8br4cBZ54NcSvTWO3f8rZnHZm2OBf358vaIryBoKASnGvTwORjAO0GUkLrWXne23XRB3XMS0y7eQt_Pc6RIX0w_qtHf6FFMStHLPbLYGNhQeISyRqukTxd_iHHRkngmV02pE-leahd7jr0i5dYSACtRJRRVFhQWwfeoLHUavw"
+                  src="https://www.aeuroweb.com/wp-content/uploads/2024/11/La-importancia-de-fotos-en-pagina-web-1030x539.jpg"
                   alt="Construcción"
                 />
               </div>
