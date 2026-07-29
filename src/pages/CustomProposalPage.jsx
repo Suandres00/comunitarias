@@ -11,16 +11,40 @@ const CustomProposalPage = () => {
 
   return (
     <main className="pt-28">
-      <section className="pb-16 px-8 max-w-[1280px] mx-auto text-center">
+      {/* <section className="pb-16 px-8 max-w-[1280px] mx-auto text-center">
         <h1 className="font-display-lg text-display-lg mb-8 max-w-4xl mx-auto">
           Productos a medida y diseños especiales
         </h1>
         <p className="font-body-lg text-body-lg text-secondary max-w-3xl mx-auto mb-12">
           Desarrollamos proyectos a gran escala utilizando Madera Plástica Pampeana de máxima resistencia.
         </p>
+      </section> */}
+    
+      {/* Horizontal Feature Section */}
+      <section className="bg-primary py-0 relative overflow-hidden">
+        <div className="flex flex-col md:flex-row min-h-[500px]">
+          <div className="w-full md:w-1/2 relative bg-surface-container-highest flex items-center justify-center p-12">
+            <div className="relative w-full aspect-video grayscale group">
+              <img
+                className="w-full h-full object-cover shadow-2xl transition-transform duration-700 group-hover:scale-105"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkbO0CmfTLexAOA4RQ0Q1cl-WNRqYqnIV_GkDU_2EqYz3x4m1Smr4zjd0MC0DhXSlCYstKMXp5BDrfHAkw4nqCeez72sM6G88aP616BCiuYLVRgIxP1rzzb3nArhzFDZ0EeBBv7TLJkJv8b-IkE85XNZ1oOjGOTGNz5yQSl_zxoJmB5q0aoC42J8H3jHksWW7KvlqLL4VQg0KiIifDCgu35LK1ISeqYsuLlxnHNqQUeDHH1ZB4DG0U0rMZXNbx-o1xIj8MOWfTLw"
+                alt="Detalle madera plástica"
+              />
+            </div>
+          </div>
+          <div className="w-full md:w-1/2 flex flex-col justify-center p-12 md:p-24 text-on-primary">
+
+            <h2 className="font-headline-xl text-headline-xl mb-8">
+              Hacemos realidad tu proyecto con los mejores materiales
+            </h2>
+            <p className="font-body-lg text-body-lg text-secondary-fixed-dim leading-relaxed">
+              Nuestra madera plástica no es solo un material eco-sustentable; es una solución de ingeniería diseñada para durar décadas sin mantenimiento, soportando climas extremos y cargas estructurales críticas.
+            </p>
+          </div>
+        </div>
       </section>
-      
-      <section className="section-gap-md px-8 max-w-[1280px] mx-auto py-20 border-t border-outline-variant">
+
+            <section className="section-gap-md px-8 max-w-[1280px] mx-auto py-20 border-t border-outline-variant">
         <h2 className="font-headline-xl text-headline-xl mb-12">Presenta tu propuesta</h2>
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-gutter gap-y-12">
           <div className="flex flex-col gap-2">
@@ -62,32 +86,6 @@ const CustomProposalPage = () => {
             </button>
           </div>
         </form>
-      </section>
-
-      {/* Horizontal Feature Section */}
-      <section className="bg-primary py-0 relative overflow-hidden">
-        <div className="flex flex-col md:flex-row min-h-[500px]">
-          <div className="w-full md:w-1/2 relative bg-surface-container-highest flex items-center justify-center p-12">
-            <div className="relative w-full aspect-video grayscale group">
-              <img
-                className="w-full h-full object-cover shadow-2xl transition-transform duration-700 group-hover:scale-105"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkbO0CmfTLexAOA4RQ0Q1cl-WNRqYqnIV_GkDU_2EqYz3x4m1Smr4zjd0MC0DhXSlCYstKMXp5BDrfHAkw4nqCeez72sM6G88aP616BCiuYLVRgIxP1rzzb3nArhzFDZ0EeBBv7TLJkJv8b-IkE85XNZ1oOjGOTGNz5yQSl_zxoJmB5q0aoC42J8H3jHksWW7KvlqLL4VQg0KiIifDCgu35LK1ISeqYsuLlxnHNqQUeDHH1ZB4DG0U0rMZXNbx-o1xIj8MOWfTLw"
-                alt="Detalle madera plástica"
-              />
-            </div>
-          </div>
-          <div className="w-full md:w-1/2 flex flex-col justify-center p-12 md:p-24 text-on-primary">
-            <span className="font-label-md text-label-md text-surface-variant mb-4 uppercase tracking-[0.2em]">
-              Karú Mapú
-            </span>
-            <h2 className="font-headline-xl text-headline-xl mb-8">
-              Hacemos realidad tu proyecto con los mejores materiales
-            </h2>
-            <p className="font-body-lg text-body-lg text-secondary-fixed-dim leading-relaxed">
-              Nuestra madera plástica no es solo un material eco-sustentable; es una solución de ingeniería diseñada para durar décadas sin mantenimiento, soportando climas extremos y cargas estructurales críticas.
-            </p>
-          </div>
-        </div>
       </section>
 
       {/* Casos de Éxito / Productos */}
