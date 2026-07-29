@@ -5,7 +5,7 @@ import logo from '../assets/logo-KARUMAPU.svg'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState(false)
-  
+
   const location = useLocation()
   const isActive = (path) => location.pathname === path
 
@@ -24,17 +24,15 @@ const Navbar = () => {
         {/* Links Desktop */}
         <div className="hidden md:flex items-center gap-8">
           <Link
-            className={`font-label-md text-label-md text-primary transition-colors ${
-              isActive('/') ? 'border-b-2 border-primary' : ''
-            }`}
+            className={`font-label-md text-label-md text-primary transition-colors ${isActive('/') ? 'border-b-2 border-primary' : ''
+              }`}
             to="/"
           >
             Inicio
           </Link>
           <Link
-            className={`font-label-md text-label-md text-primary transition-colors ${
-              isActive('/nosotros') ? 'border-b-2 border-primary' : ''
-            }`}
+            className={`font-label-md text-label-md text-primary transition-colors ${isActive('/nosotros') ? 'border-b-2 border-primary' : ''
+              }`}
             to="/nosotros"
           >
             Sobre Nosotros
@@ -43,11 +41,10 @@ const Navbar = () => {
           {/* Submenú Desktop */}
           <div className="relative group">
             <Link
-              className={`font-label-md text-label-md text-primary transition-colors flex items-center gap-1 ${
-                isActive('/productos') || isActive('/productos-a-medida')
+              className={`font-label-md text-label-md text-primary transition-colors flex items-center gap-1 ${isActive('/productos') || isActive('/productos-a-medida')
                   ? 'border-b-2 border-primary'
                   : ''
-              }`}
+                }`}
               to="/productos"
             >
               Productos
@@ -80,9 +77,8 @@ const Navbar = () => {
           </div>
 
           <Link
-            className={`font-label-md text-label-md text-primary transition-colors ${
-              isActive('/servicios') ? 'border-b-2 border-primary' : ''
-            }`}
+            className={`font-label-md text-label-md text-primary transition-colors ${isActive('/servicios') ? 'border-b-2 border-primary' : ''
+              }`}
             to="/servicios"
           >
             Servicios
@@ -120,18 +116,16 @@ const Navbar = () => {
           <Link
             to="/"
             onClick={() => setIsOpen(false)}
-            className={`font-label-md text-label-md text-primary py-2 ${
-              isActive('/') ? 'font-bold border-b-2 border-primary' : ''
-            }`}
+            className={`font-label-md text-label-md text-primary py-2 ${isActive('/') ? 'font-bold border-b-2 border-primary' : ''
+              }`}
           >
             Inicio
           </Link>
           <Link
             to="/nosotros"
             onClick={() => setIsOpen(false)}
-            className={`font-label-md text-label-md text-primary py-2 ${
-              isActive('/nosotros') ? 'font-bold border-b-2 border-primary' : ''
-            }`}
+            className={`font-label-md text-label-md text-primary py-2 ${isActive('/nosotros') ? 'font-bold border-b-2 border-primary' : ''
+              }`}
           >
             Sobre Nosotros
           </Link>
@@ -171,9 +165,8 @@ const Navbar = () => {
           <Link
             to="/servicios"
             onClick={() => setIsOpen(false)}
-            className={`font-label-md text-label-md text-primary py-2 ${
-              isActive('/servicios') ? 'font-bold border-b-2 border-primary' : ''
-            }`}
+            className={`font-label-md text-label-md text-primary py-2 ${isActive('/servicios') ? 'font-bold border-b-2 border-primary' : ''
+              }`}
           >
             Servicios
           </Link>
