@@ -71,7 +71,12 @@ const Navbar = () => {
           </Link>
         </div>
         <button className="bg-primary text-on-primary px-6 py-2 font-label-md text-label-md hover:opacity-80 transition-opacity">
+          <a
+           href="https://api.whatsapp.com/send?phone=542954217616"
+            target="_blank"
+            rel="noopener noreferrer">
           Contacto
+          </a>
         </button>
       </nav>
     </header>

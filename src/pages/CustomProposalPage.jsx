@@ -10,20 +10,12 @@ const CustomProposalPage = () => {
   }
 
   return (
-    <main className="pt-28">
-      {/* <section className="pb-16 px-8 max-w-[1280px] mx-auto text-center">
-        <h1 className="font-display-lg text-display-lg mb-8 max-w-4xl mx-auto">
-          Productos a medida y diseños especiales
-        </h1>
-        <p className="font-body-lg text-body-lg text-secondary max-w-3xl mx-auto mb-12">
-          Desarrollamos proyectos a gran escala utilizando Madera Plástica Pampeana de máxima resistencia.
-        </p>
-      </section> */}
-    
+    <main className="pt-20">
       {/* Horizontal Feature Section */}
       <section className="bg-primary py-0 relative overflow-hidden">
         <div className="flex flex-col md:flex-row min-h-[500px]">
-          <div className="w-full md:w-1/2 relative bg-surface-container-highest flex items-center justify-center p-12">
+          {/* Columna Izquierda con padding top para compensar el Nav */}
+          <div className="w-full md:w-1/2 relative bg-surface-container-highest flex items-center justify-center p-12 pt-28">
             <div className="relative w-full aspect-video grayscale group">
               <img
                 className="w-full h-full object-cover shadow-2xl transition-transform duration-700 group-hover:scale-105"
@@ -32,8 +24,9 @@ const CustomProposalPage = () => {
               />
             </div>
           </div>
-          <div className="w-full md:w-1/2 flex flex-col justify-center p-12 md:p-24 text-on-primary">
 
+          {/* Columna Derecha con padding top para compensar el Nav */}
+          <div className="w-full md:w-1/2 flex flex-col justify-center p-12 pt-28 md:p-24 md:pt-32 text-on-primary">
             <h2 className="font-headline-xl text-headline-xl mb-8">
               Hacemos realidad tu proyecto con los mejores materiales
             </h2>
@@ -44,7 +37,7 @@ const CustomProposalPage = () => {
         </div>
       </section>
 
-            <section className="section-gap-md px-8 max-w-[1280px] mx-auto py-20 border-t border-outline-variant">
+      <section className="section-gap-md px-8 max-w-[1280px] mx-auto py-20 border-t border-outline-variant">
         <h2 className="font-headline-xl text-headline-xl mb-12">Presenta tu propuesta</h2>
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-gutter gap-y-12">
           <div className="flex flex-col gap-2">
@@ -76,9 +69,8 @@ const CustomProposalPage = () => {
           </div>
           <div className="md:col-span-2">
             <button
-              className={`${
-                submitted ? 'bg-green-700' : 'bg-primary'
-              } text-on-primary px-12 py-4 font-label-md uppercase transition-all flex items-center gap-4`}
+              className={`${submitted ? 'bg-green-700' : 'bg-primary'
+                } text-on-primary px-12 py-4 font-label-md uppercase transition-all flex items-center gap-4`}
               type="submit"
             >
               {submitted ? '¡Enviado!' : 'Enviar propuesta'}

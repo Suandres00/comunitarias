@@ -2,33 +2,6 @@
 
 Proyecto React (Vite + Tailwind CSS) para el sitio de Karú Mapú.
 
-## Estructura del proyecto
-
-```
-karu-mapu/
-├── index.html
-├── package.json
-├── vite.config.js
-├── tailwind.config.js
-├── postcss.config.js
-└── src/
-    ├── main.jsx              # Punto de entrada de React
-    ├── App.jsx               # Rutas (react-router-dom)
-    ├── index.css             # Estilos globales + Tailwind
-    ├── data/
-    │   └── products.js       # Datos del catálogo de productos
-    ├── components/
-    │   ├── Navbar.jsx        # Barra de navegación con menú de Productos
-    │   ├── Footer.jsx        # Pie de página
-    │   └── ScrollToTop.jsx   # Vuelve al inicio del scroll al cambiar de ruta
-    └── pages/
-        ├── HomePage.jsx           # "/"
-        ├── AboutPage.jsx          # "/nosotros"
-        ├── ProductsPage.jsx       # "/productos"
-        ├── ServicesPage.jsx       # "/servicios"
-        └── CustomProposalPage.jsx # "/productos-a-medida"
-```
-
 ## Cómo correr el proyecto
 
 ```bash

@@ -7,9 +7,11 @@ import AboutPage from './pages/AboutPage'
 import ProductsPage from './pages/ProductsPage'
 import ServicesPage from './pages/ServicesPage'
 import CustomProposalPage from './pages/CustomProposalPage'
+import WhatsAppButton from './components/WhatsAppButton'
 
 const App = () => {
   return (
+    <div className="[zoom:0.93]"> {/* Reduce todo al 93% */}
     <BrowserRouter>
       <ScrollToTop />
       <Navbar />
@@ -21,7 +23,10 @@ const App = () => {
         <Route path="/productos-a-medida" element={<CustomProposalPage />} />
       </Routes>
       <Footer />
+      {/* Botón flotante disponible en toda la web */}
+      <WhatsAppButton />
     </BrowserRouter>
+    </div>
   )
 }
 
