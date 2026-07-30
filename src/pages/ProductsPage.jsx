@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { products } from '../data/products'
 
 const ProductsPage = () => {
@@ -14,20 +15,20 @@ const ProductsPage = () => {
       </section>
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
         {products.map((p) => (
-          <div key={p.id} className="group cursor-pointer">
+          <Link to={`/productos/${p.id}`} key={p.id} className="group cursor-pointer">
             <div className="aspect-square bg-surface-container-low overflow-hidden technical-border transition-all group-hover:industrial-shadow mb-6 flex items-center justify-center">
               <img
                 className="w-full h-full object-cover grayscale transition-transform duration-500 group-hover:scale-105"
-                src={"https://www.aeuroweb.com/wp-content/uploads/2024/11/La-importancia-de-fotos-en-pagina-web-1030x539.jpg"}
+                src="https://www.aeuroweb.com/wp-content/uploads/2024/11/La-importancia-de-fotos-en-pagina-web-1030x539.jpg"
                 alt={p.title}
               />
             </div>
             <div className="flex flex-col gap-1">
               <span className="font-label-md text-label-md text-secondary uppercase tracking-widest">{p.code}</span>
               <h3 className="font-headline-md text-headline-md text-primary">{p.title}</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant">{"Descripcion del producto"}</p>
+              <p className="font-body-md text-body-md text-on-surface-variant">{p.desc}</p>
             </div>
-          </div>
+          </Link>
         ))}
       </section>
     </main>
