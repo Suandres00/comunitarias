@@ -8,6 +8,7 @@ import ProductsPage from './pages/ProductsPage'
 import ServicesPage from './pages/ServicesPage'
 import CustomProposalPage from './pages/CustomProposalPage'
 import WhatsAppButton from './components/WhatsAppButton'
+import ProductDetailPage from './pages/ProductDetailPage'
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/nosotros" element={<AboutPage />} />
         <Route path="/productos" element={<ProductsPage />} />
+        <Route path="/productos/:id" element={<ProductDetailPage />} />
         <Route path="/servicios" element={<ServicesPage />} />
         <Route path="/productos-a-medida" element={<CustomProposalPage />} />
       </Routes>
