@@ -87,7 +87,7 @@ const Navbar = () => {
 
         {/* Botón Contacto Desktop */}
         <div className="hidden md:block">
-          <button className="bg-primary text-on-primary px-6 py-2 font-label-md text-label-md hover:opacity-80 transition-opacity">
+          <button className="bg-primary text-white px-4 py-2 transition-transform duration-300 hover:scale-105 active:scale-95">
             <a
               href="https://api.whatsapp.com/send?phone=542954217616"
               target="_blank"

@@ -13,12 +13,12 @@ const ProductsPage = () => {
           </p>
         </div>
       </section>
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+      <section className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
         {products.map((p) => (
           <Link to={`/productos/${p.id}`} key={p.id} className="group cursor-pointer">
             <div className="aspect-square bg-surface-container-low overflow-hidden technical-border transition-all group-hover:industrial-shadow mb-6 flex items-center justify-center">
               <img
-                className="w-full h-full object-cover grayscale transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 src="https://www.aeuroweb.com/wp-content/uploads/2024/11/La-importancia-de-fotos-en-pagina-web-1030x539.jpg"
                 alt={p.title}
               />

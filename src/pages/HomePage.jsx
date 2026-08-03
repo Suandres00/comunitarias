@@ -1,13 +1,21 @@
 import { Link, useNavigate } from 'react-router-dom'
-import { FaInstagram } from 'react-icons/fa';
-import { FaWhatsapp } from 'react-icons/fa';
-import { FaFacebook } from 'react-icons/fa';
+import { FaInstagram, FaWhatsapp, FaFacebook } from 'react-icons/fa'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 
 const HomePage = () => {
   const navigate = useNavigate()
 
+  // 1. Declarás las referencias para cada sección
+  const aboutSectionRef = useScrollReveal()
+  const customSectionRef = useScrollReveal()
+  const bannerSectionRef = useScrollReveal()
+  const productLeftRef = useScrollReveal()  
+  const productRightRef = useScrollReveal()
+
   return (
-    <div className="mt-20">
+    <div className="mt-20 overflow-x-hidden">
+
+      {/* Hero Section */}
       <section className="relative min-h-[819px] flex items-center justify-center overflow-hidden bg-background">
         <div className="absolute inset-0 z-0 opacity-10 flex items-center justify-center">
           <div className="relative w-[600px] h-[600px]">
@@ -29,7 +37,11 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="py-section-gap-lg max-w-[1280px] mx-auto px-8">
+      {/* Sobre Nosotros: ENTRA DESDE LA IZQUIERDA */}
+      <section
+        ref={aboutSectionRef}
+        className="reveal-hidden-left py-section-gap-lg max-w-[1280px] mx-auto px-8"
+      >
         <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
           <div className="md:col-span-5">
             <h2 className="font-headline-xl text-headline-xl mb-8">Sobre Nosotros</h2>
@@ -57,6 +69,7 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Productos */}
       <section className="py-section-gap-lg bg-surface-container-low">
         <div className="max-w-[1280px] mx-auto px-8">
           <div className="flex justify-between items-end mb-16">
@@ -74,20 +87,22 @@ const HomePage = () => {
               <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="group cursor-pointer" onClick={() => navigate('/productos')}>
-              <div className="bg-primary aspect-square overflow-hidden mb-6 flex items-center justify-center p-12">
+          <div className="grid grid-cols-2 md:grid-cols-2 gap-12">
+            <div ref={productLeftRef} 
+            className="reveal-hidden-left group cursor-pointer" onClick={() => navigate('/productos')}>
+              <div className="bg-primary aspect-square overflow-hidden mb-6 flex items-center justify-center">
                 <img
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  src="https://www.aeuroweb.com/wp-content/uploads/2024/11/La-importancia-de-fotos-en-pagina-web-1030x539.jpg "
+                  src="https://www.aeuroweb.com/wp-content/uploads/2024/11/La-importancia-de-fotos-en-pagina-web-1030x539.jpg"
                   alt="Juego Jardín"
                 />
               </div>
               <h3 className="font-headline-md text-headline-md mb-2">Juego Jardin Exterior</h3>
               <p className="font-label-md text-label-md text-secondary uppercase tracking-tighter">Código: JGE-01</p>
             </div>
-            <div className="group cursor-pointer" onClick={() => navigate('/productos')}>
-              <div className="bg-primary aspect-square overflow-hidden mb-6 flex items-center justify-center p-12">
+            <div ref={productRightRef}
+            className="reveal-hidden-right group cursor-pointer" onClick={() => navigate('/productos')}>
+              <div className="bg-primary aspect-square overflow-hidden mb-6 flex items-center justify-center">
                 <img
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   src="https://www.aeuroweb.com/wp-content/uploads/2024/11/La-importancia-de-fotos-en-pagina-web-1030x539.jpg"
@@ -101,7 +116,11 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="bg-primary text-on-primary py-section-gap-lg">
+      {/* Productos a medida: ENTRA DESDE LA DERECHA */}
+      <section
+        ref={customSectionRef}
+        className="reveal-hidden-right bg-primary text-on-primary py-section-gap-lg"
+      >
         <div className="max-w-[1280px] mx-auto px-8">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
             <div className="md:col-span-6 order-2 md:order-1">
@@ -130,8 +149,12 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      {/* Idea Banner */}
-      <section className="py-20 px-8">
+
+      {/* Idea Banner: ENTRA DESDE LA IZQUIERDA */}
+      <section
+        ref={bannerSectionRef}
+        className="reveal-hidden-left py-20 px-8"
+      >
         <div className="max-w-[1280px] mx-auto bg-background border border-primary p-12 md:p-16 flex flex-col md:flex-row justify-between items-center gap-8">
           <div>
             <h2 className="font-headline-lg text-headline-lg mb-2">
@@ -150,7 +173,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Social Media Section */}
+      {/* Redes Sociales */}
       <section className="py-20 text-center">
         <p className="font-label-md text-label-md uppercase tracking-[0.2em] mb-10 text-secondary">
           Nuestras Redes Sociales
@@ -162,7 +185,7 @@ const HomePage = () => {
             rel="noopener noreferrer"
             className="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-on-primary hover:scale-110 transition-transform"
           >
-           <FaFacebook className="w-8 h-8 text-on-primary" />
+            <FaFacebook className="w-8 h-8 text-on-primary" />
           </a>
           <a
             href="https://www.instagram.com/karumapulp/"
@@ -182,6 +205,7 @@ const HomePage = () => {
           </a>
         </div>
       </section>
+
     </div>
   )
 }

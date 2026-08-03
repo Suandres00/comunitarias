@@ -52,3 +52,29 @@ body {
   visibility: visible;
   transform: translateY(0);
 }
+
+/* Estado inicial antes de aparecer */
+.reveal-hidden-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-hidden-right {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Estado visible cuando entra a la pantalla */
+.reveal-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+@media (max-width: 768px) {
+  html {
+    font-size: 85%; /* Achica un 15% todo el tamaño base en celulares */
+  }
+}
