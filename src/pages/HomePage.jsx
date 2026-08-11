@@ -165,11 +165,10 @@ const HomePage = () => {
               </div>
             </div>
             <div className="md:col-span-5 md:offset-1 order-1 md:order-2 mb-12 md:mb-0">
-              <h2 className="font-headline-xl text-headline-xl mb-8">Realizamos productos a medida</h2>
+              <h2 className="font-headline-xl text-headline-xl mb-8">También desarrollamos proyectos a medida</h2>
               <p className="font-body-lg text-body-lg mb-10  leading-relaxed">
-                Contanos tu proyecto y lo hacemos realidad. Desde fachadas comerciales hasta mobiliario urbano
-                específico, adaptamos las propiedades de nuestra madera plástica a tus necesidades técnicas y
-                estéticas.
+                Cada espacio tiene necesidades diferentes. Por eso, además de nuestra línea de productos, diseñamos y fabricamos soluciones personalizadas en plástico reciclado para municipios, empresas, instituciones, desarrollos urbanísticos y proyectos particulares.
+                Trabajamos de manera conjunta con cada cliente para crear mobiliario urbano, equipamiento, estructuras y piezas especiales adaptadas a las dimensiones, usos y características de cada proyecto. Si imaginás una solución sustentable para tu espacio, nosotros podemos hacerla realidad.
               </p>
               <Link
                 to="/productos-a-medida"
