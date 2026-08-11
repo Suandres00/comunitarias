@@ -78,3 +78,19 @@ body {
     font-size: 85%; /* Achica un 15% todo el tamaño base en celulares */
   }
 }
+
+@keyframes aparecerDesdeArriba {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.texto-animado {
+  animation: aparecerDesdeArriba 0.9s ease-out forwards;
+
+}

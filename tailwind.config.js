@@ -52,6 +52,9 @@ export default {
         'on-error-container': '#93000a',
         'on-secondary': '#ffffff',
         'tertiary-fixed': '#e4e2e2',
+        navcolor: '#38523B',
+        fontcolor: '#F4F3EF',
+        coloreje: '#8C5A47',
       },
       borderRadius: {
         DEFAULT: '0.25rem',
@@ -88,6 +91,6 @@ export default {
         'headline-md': ['24px', { lineHeight: '1.4', fontWeight: '600' }],
       },
     },
-  },
+  },  
   plugins: [],
 }

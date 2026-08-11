@@ -10,11 +10,10 @@ export function useScrollReveal() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          // Cuando entra a la pantalla, se muestra
+          // Activa la animación
           element.classList.add('reveal-visible');
-        } else {
-          // Cuando sale de la pantalla, se oculta para reanimar al volver
-          element.classList.remove('reveal-visible');
+          // Deja de observar el elemento para que no vuelva a dispararse
+          observer.unobserve(element);
         }
       },
       { threshold: 0.15 }

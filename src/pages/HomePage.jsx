@@ -9,7 +9,7 @@ const HomePage = () => {
   const aboutSectionRef = useScrollReveal()
   const customSectionRef = useScrollReveal()
   const bannerSectionRef = useScrollReveal()
-  const productLeftRef = useScrollReveal()  
+  const productLeftRef = useScrollReveal()
   const productRightRef = useScrollReveal()
 
   return (
@@ -23,14 +23,21 @@ const HomePage = () => {
             <div className="absolute inset-0 blueprint-border -rotate-12 transform -translate-x-10"></div>
           </div>
         </div>
-        <div className="relative z-10 text-center max-w-4xl px-8">
+        <div className="texto-animado relative z-10 text-center max-w-4xl px-8">
           <h1 className="font-display-lg text-display-lg md:text-[80px] mb-6 tracking-tight">Karú Mapú</h1>
-          <p className="font-headline-md text-headline-md text-secondary mb-12 max-w-2xl mx-auto">
-            Madera Plástica Pampeana.
+          <p className="texto-animado font-headline-md text-headline-md text-secondary mb-12 max-w-2xl mx-auto">
+            Transformamos residuos plásticos en soluciones que vuelven al territorio | Madera Plástica Pampeana.
           </p>
-          <button className="inline-block bg-primary text-on-primary px-12 py-4 font-label-md text-label-md uppercase tracking-widest hover:bg-secondary transition-all">
-            Contactar
-          </button>
+          <a
+            href="https://api.whatsapp.com/send?phone=542954217616"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="inline-block bg-primary text-on-primary px-12 py-4 font-label-md text-label-md uppercase tracking-widest hover:bg-secondary transition-all">
+              Contactar
+            </button>
+          </a>
+
         </div>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <span className="material-symbols-outlined">expand_more</span>
@@ -46,9 +53,9 @@ const HomePage = () => {
           <div className="md:col-span-5">
             <h2 className="font-headline-xl text-headline-xl mb-8">Sobre Nosotros</h2>
             <p className="font-body-lg text-body-lg text-secondary mb-10 leading-relaxed">
-              Somos una empresa pampeana dedicada a la transformación de plásticos de un solo uso en madera
-              sintética de alta durabilidad. Nuestro compromiso es con el impacto ambiental real, ofreciendo una
-              alternativa robusta, eterna y de bajo mantenimiento para la arquitectura moderna.
+              <p>En Fundación Karú Mapú creemos que los residuos pueden transformarse en nuevas oportunidades. Por eso desarrollamos productos fabricados íntegramente con plástico reciclado, combinando diseño, funcionalidad y compromiso con el ambiente.</p>
+              <p>Trabajamos impulsando la economía circular, promoviendo el reciclaje y generando soluciones duraderas para espacios públicos, empresas, instituciones y hogares.</p>
+              <p>Nuestro objetivo es demostrar que es posible construir un futuro más sostenible a través de productos resistentes, de bajo mantenimiento y con un impacto ambiental positivo.</p>
             </p>
             <Link
               to="/nosotros"
@@ -87,9 +94,9 @@ const HomePage = () => {
               <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
             </Link>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-2 gap-12">
-            <div ref={productLeftRef} 
-            className="reveal-hidden-left group cursor-pointer" onClick={() => navigate('/productos')}>
+          <div className="grid grid-cols-4 md:grid-cols-2 gap-12">
+            <div ref={productLeftRef}
+              className="reveal-hidden-left group cursor-pointer" onClick={() => navigate('/productos')}>
               <div className="bg-primary aspect-square overflow-hidden mb-6 flex items-center justify-center">
                 <img
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -101,7 +108,7 @@ const HomePage = () => {
               <p className="font-label-md text-label-md text-secondary uppercase tracking-tighter">Código: JGE-01</p>
             </div>
             <div ref={productRightRef}
-            className="reveal-hidden-right group cursor-pointer" onClick={() => navigate('/productos')}>
+              className="reveal-hidden-right group cursor-pointer" onClick={() => navigate('/productos')}>
               <div className="bg-primary aspect-square overflow-hidden mb-6 flex items-center justify-center">
                 <img
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -116,39 +123,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Productos a medida: ENTRA DESDE LA DERECHA */}
-      <section
-        ref={customSectionRef}
-        className="reveal-hidden-right bg-primary text-on-primary py-section-gap-lg"
-      >
-        <div className="max-w-[1280px] mx-auto px-8">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
-            <div className="md:col-span-6 order-2 md:order-1">
-              <div className="bg-surface-container-lowest/10 p-1 border border-on-primary/20 aspect-square">
-                <img
-                  className="w-full h-full object-cover grayscale brightness-125"
-                  src="https://www.aeuroweb.com/wp-content/uploads/2024/11/La-importancia-de-fotos-en-pagina-web-1030x539.jpg"
-                  alt="Construcción"
-                />
-              </div>
-            </div>
-            <div className="md:col-span-5 md:offset-1 order-1 md:order-2 mb-12 md:mb-0">
-              <h2 className="font-headline-xl text-headline-xl mb-8">Realizamos productos a medida</h2>
-              <p className="font-body-lg text-body-lg mb-10 opacity-80 leading-relaxed">
-                Contanos tu proyecto y lo hacemos realidad. Desde fachadas comerciales hasta mobiliario urbano
-                específico, adaptamos las propiedades de nuestra madera plástica a tus necesidades técnicas y
-                estéticas.
-              </p>
-              <Link
-                to="/productos-a-medida"
-                className="bg-on-primary text-primary px-10 py-4 font-label-md text-label-md uppercase hover:bg-surface-variant transition-all inline-block"
-              >
-                Quiero hacerlo a medida
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Idea Banner: ENTRA DESDE LA IZQUIERDA */}
       <section
@@ -172,6 +146,41 @@ const HomePage = () => {
           </Link>
         </div>
       </section>
+
+      {/* Productos a medida: ENTRA DESDE LA DERECHA */}
+      <section
+        ref={customSectionRef}
+        className="reveal-hidden-right bg-background text-on-primary py-section-gap-lg"
+      >
+        <div className="max-w-[1280px] mx-auto px-8">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+            <div className="md:col-span-6 order-2 md:order-1">
+              <div className="bg-surface-container-lowest/10 p-1 border border-on-primary/20 aspect-square">
+                <img
+                  className="w-full h-full object-cover grayscale brightness-125"
+                  src="https://www.aeuroweb.com/wp-content/uploads/2024/11/La-importancia-de-fotos-en-pagina-web-1030x539.jpg"
+                  alt="Construcción"
+                />
+              </div>
+            </div>
+            <div className="md:col-span-5 md:offset-1 order-1 md:order-2 mb-12 md:mb-0">
+              <h2 className="font-headline-xl text-headline-xl mb-8">Realizamos productos a medida</h2>
+              <p className="font-body-lg text-body-lg mb-10  leading-relaxed">
+                Contanos tu proyecto y lo hacemos realidad. Desde fachadas comerciales hasta mobiliario urbano
+                específico, adaptamos las propiedades de nuestra madera plástica a tus necesidades técnicas y
+                estéticas.
+              </p>
+              <Link
+                to="/productos-a-medida"
+                className="bg-on-primary text-primary px-10 py-4 font-label-md text-label-md uppercase hover:bg-surface-variant transition-all inline-block"
+              >
+                Quiero hacerlo a medida
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* Redes Sociales */}
       <section className="py-20 text-center">

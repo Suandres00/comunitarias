@@ -10,7 +10,7 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 !bg-[#38523B]/90 backdrop-blur-md border-b border-outline-variant">
+    <header className="fixed top-0 left-0 w-full z-50 !bg-navcolor border-outline-variant">
       <nav className="flex justify-between items-center h-20 px-8 max-w-[1280px] mx-auto">
         {/* Logo */}
         <Link to="/" className="flex items-center" onClick={() => setIsOpen(false)}>
@@ -24,14 +24,14 @@ const Navbar = () => {
         {/* Links Desktop */}
         <div className="hidden md:flex items-center gap-8">
           <Link
-            className={`font-label-md text-label-md text-primary transition-colors ${isActive('/') ? 'border-b-2 border-primary' : ''
+            className={`font-label-md text-body-lg text-fontcolor transition-colors ${isActive('/') ? 'border-b-2 border-fontcolor' : ''
               }`}
             to="/"
           >
             Inicio
           </Link>
           <Link
-            className={`font-label-md text-label-md text-primary transition-colors ${isActive('/nosotros') ? 'border-b-2 border-primary' : ''
+            className={`font-label-md text-body-lg text-fontcolor transition-colors ${isActive('/nosotros') ? 'border-b-2 border-fontcolor' : ''
               }`}
             to="/nosotros"
           >
@@ -41,9 +41,9 @@ const Navbar = () => {
           {/* Submenú Desktop */}
           <div className="relative group">
             <Link
-              className={`font-label-md text-label-md text-primary transition-colors flex items-center gap-1 ${isActive('/productos') || isActive('/productos-a-medida')
-                  ? 'border-b-2 border-primary'
-                  : ''
+              className={`font-label-md text-body-lg text-fontcolor transition-colors flex items-center gap-1 ${isActive('/productos') || isActive('/productos-a-medida')
+                ? 'border-b-2 border-fontcolor'
+                : ''
                 }`}
               to="/productos"
             >
@@ -77,7 +77,7 @@ const Navbar = () => {
           </div>
 
           <Link
-            className={`font-label-md text-label-md text-primary transition-colors ${isActive('/servicios') ? 'border-b-2 border-primary' : ''
+            className={`font-label-md text-body-lg text-fontcolor transition-colors ${isActive('/servicios') ? 'border-b-2 border-fontcolor' : ''
               }`}
             to="/servicios"
           >
@@ -87,15 +87,15 @@ const Navbar = () => {
 
         {/* Botón Contacto Desktop */}
         <div className="hidden md:block">
-          <button className="bg-primary text-white px-4 py-2 transition-transform duration-300 hover:scale-105 active:scale-95">
-            <a
-              href="https://api.whatsapp.com/send?phone=542954217616"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+          <a
+            href="https://api.whatsapp.com/send?phone=542954217616"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="bg-primary text-white px-4 py-2 transition-transform duration-300 hover:scale-105 active:scale-95">
               Contacto
-            </a>
-          </button>
+            </button>
+          </a>
         </div>
 
         {/* Botón Hamburguesa Mobile */}
