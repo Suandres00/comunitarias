@@ -94,7 +94,7 @@ const HomePage = () => {
               <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
             </Link>
           </div>
-          <div className="grid grid-cols-4 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-2 gap-20">
             <div ref={productLeftRef}
               className="reveal-hidden-left group cursor-pointer" onClick={() => navigate('/productos')}>
               <div className="bg-primary aspect-square overflow-hidden mb-6 flex items-center justify-center">

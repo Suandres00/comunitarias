@@ -92,16 +92,14 @@ const Navbar = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button className="bg-primary text-white px-4 py-2 transition-transform duration-300 hover:scale-105 active:scale-95">
-              Contacto
-            </button>
+
           </a>
         </div>
 
         {/* Botón Hamburguesa Mobile */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-primary focus:outline-none p-2"
+          className="md:hidden text-fontcolor focus:outline-none p-2"
           aria-label="Abrir menú"
         >
           <span className="material-symbols-outlined text-3xl">
@@ -170,16 +168,6 @@ const Navbar = () => {
           >
             Servicios
           </Link>
-
-          <a
-            href="https://api.whatsapp.com/send?phone=542954217616"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setIsOpen(false)}
-            className="bg-primary text-on-primary text-center py-3 font-label-md text-label-md mt-2 block"
-          >
-            Contacto
-          </a>
         </div>
       )}
     </header>
