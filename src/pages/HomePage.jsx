@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { FaInstagram, FaWhatsapp, FaFacebook } from 'react-icons/fa'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import { products } from '../data/products';
 
 const HomePage = () => {
   const navigate = useNavigate()
@@ -81,7 +82,7 @@ const HomePage = () => {
         <div className="max-w-[1280px] mx-auto px-8">
           <div className="flex justify-between items-end mb-16">
             <div>
-              <h2 className="font-headline-xl text-headline-xl mb-4">Algunos de nuestros productos</h2>
+              <h2 className="font-headline-xl text-headline-xl mb-4">Nuestros productos</h2>
               <p className="font-body-md text-body-md text-secondary">
                 Contamos con los mejores productos hechos en madera plástica pampeana.
               </p>
@@ -94,30 +95,30 @@ const HomePage = () => {
               <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
             </Link>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-2 gap-20">
-            <div ref={productLeftRef}
-              className="reveal-hidden-left group cursor-pointer" onClick={() => navigate('/productos')}>
-              <div className="bg-primary aspect-square overflow-hidden mb-6 flex items-center justify-center">
-                <img
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  src="https://www.aeuroweb.com/wp-content/uploads/2024/11/La-importancia-de-fotos-en-pagina-web-1030x539.jpg"
-                  alt="Juego Jardín"
-                />
-              </div>
-              <h3 className="font-headline-md text-headline-md mb-2">Juego Jardin Exterior</h3>
-              <p className="font-label-md text-label-md text-secondary uppercase tracking-tighter">Código: JGE-01</p>
-            </div>
-            <div ref={productRightRef}
-              className="reveal-hidden-right group cursor-pointer" onClick={() => navigate('/productos')}>
-              <div className="bg-primary aspect-square overflow-hidden mb-6 flex items-center justify-center">
-                <img
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  src="https://www.aeuroweb.com/wp-content/uploads/2024/11/La-importancia-de-fotos-en-pagina-web-1030x539.jpg"
-                  alt="Mesa Ratona"
-                />
-              </div>
-              <h3 className="font-headline-md text-headline-md mb-2">Mesa Ratona de madera plástica y hierro</h3>
-              <p className="font-label-md text-label-md text-secondary uppercase tracking-tighter">Código: MRH-45</p>
+          <div className="w-full overflow-hidden py-4">
+            <div className="animate-marquee flex gap-8">
+              {/* Duplicamos los productos (...products, ...products) para hacer el loop infinito */}
+              {[...products, ...products].map((product, index) => (
+                <div
+                  key={`${product.id}-${index}`}
+                  className="w-[300px] md:w-[400px] flex-none group cursor-pointer"
+                  onClick={() => navigate('/productos')}
+                >
+                  <div className="bg-white aspect-square overflow-hidden mb-6 flex items-center justify-center p-6 shadow-sm rounded-lg">
+                    <img
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                      src={product.img || product.image}
+                      alt={product.title || product.name}
+                    />
+                  </div>
+                  <h3 className="font-headline-md text-headline-md mb-1">
+                    {product.title || product.name}
+                  </h3>
+                  <p className="font-label-md text-label-md text-secondary uppercase tracking-tighter">
+                    Código: {product.code}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -150,7 +151,7 @@ const HomePage = () => {
       {/* Productos a medida: ENTRA DESDE LA DERECHA */}
       <section
         ref={customSectionRef}
-        className="reveal-hidden-right bg-background text-on-primary py-section-gap-lg"
+        className="reveal-hidden-right bg-primary text-on-primary py-section-gap-lg"
       >
         <div className="max-w-[1280px] mx-auto px-8">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">

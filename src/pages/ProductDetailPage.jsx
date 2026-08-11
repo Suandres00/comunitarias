@@ -29,8 +29,8 @@ const ProductDetailPage = () => {
             <section className="grid grid-cols-1 md:grid-cols-2 gap-gutter mt-6">
                 <div className="aspect-square bg-surface-container-low overflow-hidden technical-border industrial-shadow flex items-center justify-center">
                     <img
-                        className="w-full h-full object-cover grayscale"
-                        src="https://www.aeuroweb.com/wp-content/uploads/2024/11/La-importancia-de-fotos-en-pagina-web-1030x539.jpg"
+                        className="w-full h-full object-cover"
+                        src={product.img}
                         alt={product.title}
                     />
                 </div>
