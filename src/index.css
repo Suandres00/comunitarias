@@ -100,7 +100,7 @@ body {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-40%);
+    transform: translateX(-20%);
   }
 }
 
