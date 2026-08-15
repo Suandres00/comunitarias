@@ -1,10 +1,14 @@
 import { Link } from 'react-router-dom'
 import { products } from '../data/products'
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const ProductsPage = () => {
+  const section1Ref = useScrollReveal();
   return (
     <main className="max-w-[1280px] mx-auto px-8 pt-28 pb-section-gap-lg">
-      <section className="mb-20 text-center md:text-left">
+      <section 
+            ref={section1Ref}
+            className="reveal-hidden-left mb-20 text-center md:text-left">
         <div className="bg-surface-container-high py-16 px-8 industrial-shadow technical-border">
           <h1 className="font-display-lg text-display-lg text-primary mb-4">Productos</h1>
           <p className="font-body-lg text-body-lg text-secondary max-w-2xl">

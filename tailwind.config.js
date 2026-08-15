@@ -55,6 +55,11 @@ export default {
         navcolor: '#38523B',
         fontcolor: '#F4F3EF',
         coloreje: '#8C5A47',
+        colorbody: '#F4F3EF',
+        fondosegundario: '#5b5544',
+        titulos: '#222222',
+        colorprimario: '#38523B',
+        coloracento: '#8C5A47',
       },
       borderRadius: {
         DEFAULT: '0.25rem',

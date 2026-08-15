@@ -24,7 +24,7 @@ const HomePage = () => {
             <div className="absolute inset-0 blueprint-border -rotate-12 transform -translate-x-10"></div>
           </div>
         </div>
-        <div className="texto-animado relative z-10 text-center max-w-4xl px-8">
+        <div className="texto-animado relative z-10 text-center max-w-7xl px-8">
           <h1 className="font-display-lg text-display-lg md:text-[80px] mb-6 tracking-tight">Karú Mapú</h1>
           <p className="texto-animado font-headline-md text-headline-md text-secondary mb-12 max-w-2xl mx-auto">
             Transformamos residuos plásticos en soluciones que vuelven al territorio | Madera Plástica Pampeana.
@@ -87,22 +87,20 @@ const HomePage = () => {
                 Contamos con los mejores productos hechos en madera plástica pampeana.
               </p>
             </div>
-            <Link
+              <Link
               to="/productos"
-              className="hidden md:flex items-center gap-2 font-label-md text-label-md border-b border-primary pb-1 hover:opacity-70 transition-opacity"
+              className="inline-block border border-primary px-8 py-3 font-label-md text-label-md hover:bg-surface-container transition-colors"
             >
-              Ver mas productos
-              <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+              Ver más productos
             </Link>
           </div>
           <div className="w-full overflow-hidden py-4">
             <div className="animate-marquee flex gap-8">
-              {/* Duplicamos los productos (...products, ...products) para hacer el loop infinito */}
               {[...products, ...products].map((product, index) => (
                 <div
                   key={`${product.id}-${index}`}
                   className="w-[300px] md:w-[400px] flex-none group cursor-pointer"
-                  onClick={() => navigate('/productos')}
+                  onClick={() => navigate(`/productos/${product.id}`)}
                 >
                   <div className="bg-white aspect-square overflow-hidden mb-6 flex items-center justify-center p-6 shadow-sm rounded-lg">
                     <img

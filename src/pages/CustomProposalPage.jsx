@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 
 const CustomProposalPage = () => {
+  const section1Ref = useScrollReveal();
   const [submitted, setSubmitted] = useState(false)
 
   const handleSubmit = (e) => {
@@ -12,11 +14,13 @@ const CustomProposalPage = () => {
   return (
     <main className="pt-20">
       {/* Horizontal Feature Section */}
-      <section className="bg-primary py-0 relative overflow-hidden">
+      <section 
+       ref={section1Ref}
+       className="reveal-hidden-left bg-primary py-0 relative overflow-hidden">
         <div className="flex flex-col md:flex-row min-h-[500px]">
           {/* Columna Izquierda con padding top para compensar el Nav */}
           <div className="w-full md:w-1/2 relative bg-surface-container-highest flex items-center justify-center p-12 pt-28">
-            <div className="relative w-full aspect-video grayscale group">
+            <div className="relative w-full aspect-video group">
               <img
                 className="w-full h-full object-cover shadow-2xl transition-transform duration-700 group-hover:scale-105"
                 src="https://www.aeuroweb.com/wp-content/uploads/2024/11/La-importancia-de-fotos-en-pagina-web-1030x539.jpg"
@@ -102,7 +106,7 @@ const CustomProposalPage = () => {
             </div>
             <h4 className="font-headline-md text-headline-md mb-1">Producto 1</h4>
             <p className="font-label-md text-label-md text-secondary uppercase opacity-70">
-             KM-V01
+              KM-V01
             </p>
             <p className="font-body-md text-body-md text-secondary mt-2">
               Breve descripcion del producto.
