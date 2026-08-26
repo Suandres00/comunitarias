@@ -15,7 +15,7 @@ const CustomProposalPage = () => {
     <main className="pt-20">
       {/* Horizontal Feature Section */}
       <section 
-       ref={section1Ref}
+       ref={section1Ref} 
        className="reveal-hidden-left bg-primary py-0 relative overflow-hidden">
         <div className="flex flex-col md:flex-row min-h-[500px]">
           {/* Columna Izquierda con padding top para compensar el Nav */}
