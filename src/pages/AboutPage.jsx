@@ -44,10 +44,10 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-tbackground">
         <div  className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[1280px] mx-auto px-8">
           
-            <div ref={section2Ref} className="reveal-hidden-left bg-surface-container-low p-10 rounded-lg text-center flex flex-col items-center justify-center border border-outline-variant">
+            <div ref={section2Ref} className="reveal-hidden-left bg-tertiary-fixed p-10 rounded-lg text-center flex flex-col items-center justify-center border border-outline-variant">
               <span className="material-symbols-outlined text-4xl mb-6 text-primary">eco</span>
               <h3 className="font-headline-lg text-headline-lg mb-4">Misión</h3>
               <p className="text-secondary max-w-sm">Transformar el desperdicio plástico en infraestructura eterna.</p>

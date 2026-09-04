@@ -34,7 +34,7 @@ const HomePage = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button className="inline-block bg-primary text-on-primary px-12 py-4 font-label-md text-label-md uppercase tracking-widest hover:bg-secondary transition-all">
+            <button className="inline-block bg-titulos text-on-primary px-12 py-4 font-label-md text-label-md uppercase tracking-widest hover:bg-primary transition-all">
               Contactar
             </button>
           </a>
