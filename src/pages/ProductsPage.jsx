@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-<<<<<<< HEAD
+import { useScrollReveal } from '../hooks/useScrollReveal'
 
 const ProductsPage = () => {
+  const section1Ref = useScrollReveal()
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -36,18 +37,11 @@ const ProductsPage = () => {
     )
   }
 
-=======
-import { products } from '../data/products'
-import { useScrollReveal } from '../hooks/useScrollReveal';
-
-const ProductsPage = () => {
-  const section1Ref = useScrollReveal();
->>>>>>> 30928d29a3832376474b2558afa3ef9edfb9f429
   return (
     <main className="max-w-[1280px] mx-auto px-8 pt-28 pb-section-gap-lg">
-      <section 
-            ref={section1Ref}
-            className="reveal-hidden-left mb-20 text-center md:text-left">
+      <section
+        ref={section1Ref}
+        className="reveal-hidden-left mb-20 text-center md:text-left">
         <div className="bg-surface-container-high py-16 px-8 industrial-shadow technical-border">
           <h1 className="font-display-lg text-display-lg text-primary mb-4">Productos</h1>
           <p className="font-body-lg text-body-lg text-secondary max-w-2xl">
