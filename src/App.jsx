@@ -12,7 +12,7 @@ import ProductDetailPage from './pages/ProductDetailPage'
 
 const App = () => {
   return (
-    <div className="[zoom:0.93]"> {/* Reduce todo al 93% */}
+    <div className="[zoom:0.88]"> {/* Reduce todo al 88% */}
     <BrowserRouter>
       <ScrollToTop />
       <Navbar />
