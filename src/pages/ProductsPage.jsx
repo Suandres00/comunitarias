@@ -1,7 +1,40 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { products } from '../data/products'
 
 const ProductsPage = () => {
+  const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    fetch('http://localhost:3001/api/productos')
+      .then((res) => res.json())
+      .then((data) => {
+        setProducts(data)
+        setLoading(false)
+      })
+      .catch((err) => {
+        setError('No se pudieron cargar los productos')
+        setLoading(false)
+      })
+  }, [])
+
+  if (loading) {
+    return (
+      <main className="max-w-[1280px] mx-auto px-8 pt-28 pb-section-gap-lg text-center">
+        <p className="font-body-lg text-body-lg text-secondary">Cargando productos...</p>
+      </main>
+    )
+  }
+
+  if (error) {
+    return (
+      <main className="max-w-[1280px] mx-auto px-8 pt-28 pb-section-gap-lg text-center">
+        <p className="font-body-lg text-body-lg text-secondary">{error}</p>
+      </main>
+    )
+  }
+
   return (
     <main className="max-w-[1280px] mx-auto px-8 pt-28 pb-section-gap-lg">
       <section className="mb-20 text-center md:text-left">

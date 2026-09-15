@@ -1,11 +1,37 @@
+import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { products } from '../data/products'
 
 const ProductDetailPage = () => {
     const { id } = useParams()
-    const product = products.find((p) => p.id === Number(id))
+    const [product, setProduct] = useState(null)
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
 
-    if (!product) {
+    useEffect(() => {
+        fetch(`http://localhost:3001/api/productos/${id}`)
+            .then((res) => {
+                if (!res.ok) throw new Error('Producto no encontrado')
+                return res.json()
+            })
+            .then((data) => {
+                setProduct(data)
+                setLoading(false)
+            })
+            .catch((err) => {
+                setError(err.message)
+                setLoading(false)
+            })
+    }, [id])
+
+    if (loading) {
+        return (
+            <main className="max-w-[1280px] mx-auto px-8 pt-28 pb-section-gap-lg text-center">
+                <p className="font-body-lg text-body-lg text-secondary">Cargando producto...</p>
+            </main>
+        )
+    }
+
+    if (error || !product) {
         return (
             <main className="max-w-[1280px] mx-auto px-8 pt-28 pb-section-gap-lg text-center">
                 <h1 className="font-display-lg text-display-lg text-primary mb-4">Producto no encontrado</h1>
@@ -51,13 +77,14 @@ const ProductDetailPage = () => {
                             </p>
                         </div>
                     </div>
+                    <a>
 
-                    <a
-                        href={`https://wa.me/5492954217616?text=${whatsappMessage}`}
+
+                        href={`https://wa.me/5491112345678?text=${whatsappMessage}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="mt-auto inline-flex items-center justify-center bg-primary text-on-primary font-label-md text-label-md uppercase tracking-widest py-4 px-8 industrial-shadow technical-border w-fit"
-                    >
+
                         Consultar por WhatsApp
                     </a>
                 </div>
