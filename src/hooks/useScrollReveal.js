@@ -1,18 +1,21 @@
-import { useEffect, useRef } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 
 export function useScrollReveal() {
-  const ref = useRef(null);
+  const [element, setElement] = useState(null);
+
+  const ref = useCallback((node) => {
+    if (node) {
+      setElement(node);
+    }
+  }, []);
 
   useEffect(() => {
-    const element = ref.current;
     if (!element) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          // Activa la animación
           element.classList.add('reveal-visible');
-          // Deja de observar el elemento para que no vuelva a dispararse
           observer.unobserve(element);
         }
       },
@@ -22,7 +25,7 @@ export function useScrollReveal() {
     observer.observe(element);
 
     return () => observer.disconnect();
-  }, []);
+  }, [element]);
 
   return ref;
 }

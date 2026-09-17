@@ -4,6 +4,8 @@ const db = require('./db')
 
 const app = express()
 const PORT = 3001
+require('dotenv').config()
+const bcrypt = require('bcrypt')
 
 app.use(cors())
 app.use(express.json())
@@ -59,4 +61,20 @@ app.delete('/api/productos/:id', (req, res) => {
     return res.status(404).json({ error: 'Producto no encontrado' })
   }
   res.status(204).send()
+})
+// validar contraseña
+app.post('/api/admin/login', (req, res) => {
+  const { password } = req.body
+
+  if (!password) {
+    return res.status(400).json({ success: false, error: 'Falta la contraseña' })
+  }
+
+  const esValida = bcrypt.compareSync(password, process.env.ADMIN_PASSWORD_HASH)
+ 
+  if (esValida) {
+    res.json({ success: true })
+  } else {
+    res.status(401).json({ success: false, error: 'Contraseña incorrecta' })
+  }
 })
