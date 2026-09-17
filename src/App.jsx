@@ -9,25 +9,34 @@ import ServicesPage from './pages/ServicesPage'
 import CustomProposalPage from './pages/CustomProposalPage'
 import WhatsAppButton from './components/WhatsAppButton'
 import ProductDetailPage from './pages/ProductDetailPage'
+import AdminLogin from './pages/AdminLogin'
+import RequireAdmin from './components/RequireAdmin'
+import AdminPanel from './pages/AdminPanel'
+import AdminProductForm from './pages/AdminProductForm'
+
 
 const App = () => {
   return (
     <div className="[zoom:0.88]"> {/* Reduce todo al 88% */}
-    <BrowserRouter>
-      <ScrollToTop />
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/nosotros" element={<AboutPage />} />
-        <Route path="/productos" element={<ProductsPage />} />
-        <Route path="/productos/:id" element={<ProductDetailPage />} />
-        <Route path="/servicios" element={<ServicesPage />} />
-        <Route path="/productos-a-medida" element={<CustomProposalPage />} />
-      </Routes>
-      <Footer />
-      {/* Botón flotante disponible en toda la web */}
-      <WhatsAppButton />
-    </BrowserRouter>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/nosotros" element={<AboutPage />} />
+          <Route path="/productos" element={<ProductsPage />} />
+          <Route path="/productos/:id" element={<ProductDetailPage />} />
+          <Route path="/servicios" element={<ServicesPage />} />
+          <Route path="/productos-a-medida" element={<CustomProposalPage />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin" element={<RequireAdmin><AdminPanel /></RequireAdmin>} />
+          <Route path="/admin/nuevo" element={<RequireAdmin><AdminProductForm /></RequireAdmin>} />
+          <Route path="/admin/editar/:id" element={<RequireAdmin><AdminProductForm /></RequireAdmin>} />
+        </Routes>
+        <Footer />
+        {/* Botón flotante disponible en toda la web */}
+        <WhatsAppButton />
+      </BrowserRouter>
     </div>
   )
 }

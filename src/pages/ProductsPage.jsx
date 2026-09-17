@@ -41,10 +41,10 @@ const ProductsPage = () => {
     <main className="max-w-[1280px] mx-auto px-8 pt-28 pb-section-gap-lg">
       <section
         ref={section1Ref}
-        className="reveal-hidden-left mb-20 text-center md:text-left">
-        <div className="bg-surface-container-high py-16 px-8 industrial-shadow technical-border">
-          <h1 className="font-display-lg text-display-lg text-primary mb-4">Productos</h1>
-          <p className="font-body-lg text-body-lg text-secondary max-w-2xl">
+        className="reveal-hidden-left mb-24 flex flex-col items-center text-center">
+        <div className="bg-white border border-outline-variant p-12 md:p-20 max-w-4xl technical-shadow-heavy">
+          <h1 className="font-display-lg text-display-lg mb-6 text-primary">Productos</h1>
+          <p className="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto">
             Nuestros productos están hechos con la mejor madera plástica del mercado. Soluciones duraderas,
             sustentables y de alta precisión para arquitectura moderna.
           </p>
