@@ -1,3 +1,4 @@
+require('dotenv').config()
 const db = require('./db')
 
 const productos = [
@@ -45,13 +46,21 @@ const productos = [
   },
 ]
 
-const insert = db.prepare(`
-  INSERT INTO productos (title, code, desc, price, img)
-  VALUES (@title, @code, @desc, @price, @img)
-`)
-
-for (const p of productos) {
-  insert.run(p)
+async function seed() {
+  try {
+    for (const p of productos) {
+      await db.query(
+        `INSERT INTO productos (title, code, "desc", price, img)
+         VALUES ($1, $2, $3, $4, $5)`,
+        [p.title, p.code, p.desc, p.price, p.img]
+      )
+    }
+    console.log(`Se cargaron ${productos.length} productos.`)
+  } catch (err) {
+    console.error('Error al cargar productos:', err)
+  } finally {
+    process.exit()
+  }
 }
 
-console.log(`Se cargaron ${productos.length} productos.`)
+seed()

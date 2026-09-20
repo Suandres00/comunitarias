@@ -77,15 +77,13 @@ const ProductDetailPage = () => {
                             </p>
                         </div>
                     </div>
-                    <a>
-
-
-                        href={`https://wa.me/5491112345678?text=${whatsappMessage}`}
+                    <a  href={`https://wa.me/5491112345678?text=${whatsappMessage}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="mt-auto inline-flex items-center justify-center bg-primary text-on-primary font-label-md text-label-md uppercase tracking-widest py-4 px-8 industrial-shadow technical-border w-fit"
-
+                    >
                         Consultar por WhatsApp
+                        
                     </a>
                 </div>
             </section>
