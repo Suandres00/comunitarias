@@ -7,9 +7,14 @@ const ProductsPage = () => {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [busqueda, setBusqueda] = useState('')
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/productos')
+    const url = busqueda
+      ? `http://localhost:3001/api/productos?buscar=${encodeURIComponent(busqueda)}`
+      : 'http://localhost:3001/api/productos'
+
+    fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data)
@@ -19,7 +24,7 @@ const ProductsPage = () => {
         setError('No se pudieron cargar los productos')
         setLoading(false)
       })
-  }, [])
+  }, [busqueda])
 
   if (loading) {
     return (
@@ -49,25 +54,41 @@ const ProductsPage = () => {
             sustentables y de alta precisión para arquitectura moderna.
           </p>
         </div>
+        <div className="mt-10 mb-4 w-full max-w-xl mx-auto">
+          <input
+            type="text"
+            placeholder="Buscar por nombre o código..."
+            value={busqueda}
+            onChange={(e) => setBusqueda(e.target.value)}
+            className="w-full border border-outline-variant px-5 py-4 font-body-md text-body-md technical-border"
+          />
+        </div>
       </section>
-      <section className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-        {products.map((p) => (
-          <Link to={`/productos/${p.id}`} key={p.id} className="group cursor-pointer">
-            <div className="aspect-square bg-surface-container-low overflow-hidden technical-border transition-all group-hover:industrial-shadow mb-6 flex items-center justify-center">
-              <img
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                src={p.img}
-                alt={p.title}
-              />
-            </div>
-            <div className="flex flex-col gap-1">
-              <span className="font-label-md text-label-md text-secondary uppercase tracking-widest">{p.code}</span>
-              <h3 className="font-headline-md text-headline-md text-primary">{p.title}</h3>
-              <p className="line-clamp-3 font-body-md text-body-md text-on-surface-variant">{p.desc}</p>
-            </div>
-          </Link>
-        ))}
-      </section>
+
+      {products.length === 0 ? (
+        <p className="font-body-lg text-body-lg text-secondary text-center py-20">
+          No se encontraron productos que coincidan con tu búsqueda.
+        </p>
+      ) : (
+        <section className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+          {products.map((p) => (
+            <Link to={`/productos/${p.id}`} key={p.id} className="group cursor-pointer">
+              <div className="aspect-square bg-surface-container-low overflow-hidden technical-border transition-all group-hover:industrial-shadow mb-6 flex items-center justify-center">
+                <img
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  src={p.img}
+                  alt={p.title}
+                />
+              </div>
+              <div className="flex flex-col gap-1">
+                <span className="font-label-md text-label-md text-secondary uppercase tracking-widest">{p.code}</span>
+                <h3 className="font-headline-md text-headline-md text-primary">{p.title}</h3>
+                <p className="line-clamp-3 font-body-md text-body-md text-on-surface-variant">{p.desc}</p>
+              </div>
+            </Link>
+          ))}
+        </section>
+      )}
     </main>
   )
 }

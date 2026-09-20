@@ -10,8 +10,19 @@ const bcrypt = require('bcrypt')
 app.use(cors())
 app.use(express.json())
 
-// GET - traer todos los productos
+//buscar productos
 app.get('/api/productos', (req, res) => {
+  const { buscar } = req.query
+
+  if (buscar) {
+    const termino = `%${buscar}%`
+    const productos = db.prepare(`
+      SELECT * FROM productos
+      WHERE title LIKE ? OR code LIKE ?
+    `).all(termino, termino)
+    return res.json(productos)
+  }
+
   const productos = db.prepare('SELECT * FROM productos').all()
   res.json(productos)
 })
