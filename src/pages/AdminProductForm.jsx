@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 
+const CLOUD_NAME = 'upj3yzbb'
+const UPLOAD_PRESET = 'ml_default'
+
 const AdminProductForm = () => {
   const { id } = useParams()
   const navigate = useNavigate()
@@ -12,10 +15,16 @@ const AdminProductForm = () => {
     desc: '',
     price: '',
     img: '',
+    disponible: true,
   })
   const [loading, setLoading] = useState(esEdicion)
   const [guardando, setGuardando] = useState(false)
+  const [subiendoImagen, setSubiendoImagen] = useState(false)
   const [error, setError] = useState(null)
+
+  const handleCheckboxChange = (e) => {
+    setFormData((prev) => ({ ...prev, disponible: e.target.checked }))
+  }
 
   useEffect(() => {
     if (esEdicion) {
@@ -31,6 +40,36 @@ const AdminProductForm = () => {
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
+  }
+
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0]
+    if (!file) return
+
+    setSubiendoImagen(true)
+    setError(null)
+
+    const data = new FormData()
+    data.append('file', file)
+    data.append('upload_preset', UPLOAD_PRESET)
+
+    fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, {
+      method: 'POST',
+      body: data,
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.secure_url) {
+          setFormData((prev) => ({ ...prev, img: result.secure_url }))
+        } else {
+          setError('No se pudo subir la imagen')
+        }
+        setSubiendoImagen(false)
+      })
+      .catch(() => {
+        setError('Error al subir la imagen')
+        setSubiendoImagen(false)
+      })
   }
 
   const handleSubmit = (e) => {
@@ -73,7 +112,7 @@ const AdminProductForm = () => {
   }
 
   return (
-    <main className="max-w-[800px] mx-auto px-8 pt-28 pb-section-gap-lg">
+    <main className="max-w-[800px] mx-auto px-4 sm:px-8 pt-28 pb-section-gap-lg">
       <h1 className="font-display-lg text-display-lg text-primary mb-8">
         {esEdicion ? 'Editar producto' : 'Nuevo producto'}
       </h1>
@@ -135,18 +174,42 @@ const AdminProductForm = () => {
           />
         </div>
 
-        <div className="flex flex-col gap-1">
-          <label className="font-label-md text-label-md text-secondary uppercase tracking-widest">
-            URL de la imagen
-          </label>
+        <div className="flex items-center gap-2">
           <input
-            type="text"
-            name="img"
-            value={formData.img}
-            onChange={handleChange}
-            required
-            className="border border-outline-variant px-4 py-3 font-body-md text-body-md"
+            type="checkbox"
+            id="disponible"
+            checked={formData.disponible}
+            onChange={handleCheckboxChange}
+            className="w-5 h-5"
           />
+          <label htmlFor="disponible" className="font-body-md text-body-md text-primary">
+            Producto disponible
+          </label>
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <label className="font-label-md text-label-md text-secondary uppercase tracking-widest">
+            Imagen del producto
+          </label>
+
+          {formData.img && (
+            <img
+              src={formData.img}
+              alt="Vista previa"
+              className="w-32 h-32 object-cover technical-border mb-2"
+            />
+          )}
+
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleImageUpload}
+            className="font-body-md text-body-md"
+          />
+
+          {subiendoImagen && (
+            <p className="font-body-md text-body-md text-secondary">Subiendo imagen...</p>
+          )}
         </div>
 
         {error && <p className="text-red-600 font-body-md text-body-md">{error}</p>}
@@ -154,7 +217,7 @@ const AdminProductForm = () => {
         <div className="flex gap-4 mt-4">
           <button
             type="submit"
-            disabled={guardando}
+            disabled={guardando || subiendoImagen}
             className="bg-primary text-on-primary font-label-md text-label-md uppercase tracking-widest py-3 px-8 industrial-shadow technical-border"
           >
             {guardando ? 'Guardando...' : 'Guardar'}

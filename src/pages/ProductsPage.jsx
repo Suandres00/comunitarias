@@ -73,7 +73,12 @@ const ProductsPage = () => {
         <section className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
           {products.map((p) => (
             <Link to={`/productos/${p.id}`} key={p.id} className="group cursor-pointer">
-              <div className="aspect-square bg-surface-container-low overflow-hidden technical-border transition-all group-hover:industrial-shadow mb-6 flex items-center justify-center">
+              <div className="relative aspect-square bg-surface-container-low overflow-hidden technical-border transition-all group-hover:industrial-shadow mb-6 flex items-center justify-center">
+                {!p.disponible && (
+                  <span className="absolute top-2 left-2 bg-red-600 text-white font-label-md text-label-md uppercase px-3 py-1 z-10">
+                    Agotado
+                  </span>
+                )}
                 <img
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   src={p.img}

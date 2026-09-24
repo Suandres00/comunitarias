@@ -17,8 +17,13 @@ pool.query(`
   )
 `).then(() => {
   console.log('Tabla productos lista')
+  return pool.query(`
+    ALTER TABLE productos ADD COLUMN IF NOT EXISTS disponible BOOLEAN NOT NULL DEFAULT true
+  `)
+}).then(() => {
+  console.log('Columna disponible lista')
 }).catch((err) => {
-  console.error('Error creando la tabla:', err)
+  console.error('Error preparando la base:', err)
 })
 
 module.exports = pool

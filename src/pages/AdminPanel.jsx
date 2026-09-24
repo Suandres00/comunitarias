@@ -45,11 +45,13 @@ const AdminPanel = () => {
 
   return (
     <main className="max-w-[1280px] mx-auto px-8 pt-28 pb-section-gap-lg">
-      <div className="flex items-center justify-between mb-10">
-        <h1 className="font-display-lg text-display-lg text-primary">Panel de Administración</h1>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+        <h1 className="font-display-md sm:font-display-lg text-display-md sm:text-display-lg text-primary">
+          Panel de Administración
+        </h1>
         <button
           onClick={handleLogout}
-          className="font-body-md text-body-md text-secondary underline"
+          className="font-body-md text-body-md text-secondary underline self-start sm:self-auto"
         >
           Cerrar sesión
         </button>
@@ -66,30 +68,51 @@ const AdminPanel = () => {
         {products.map((p) => (
           <div
             key={p.id}
-            className="flex items-center gap-4 bg-surface-container-low technical-border p-4"
+            className="flex flex-col sm:flex-row sm:items-center gap-4 bg-surface-container-low technical-border p-4"
           >
-            <img
-              src={p.img}
-              alt={p.title}
-              className="w-20 h-20 object-cover technical-border"
-            />
-            <div className="flex-1">
+            <div className="flex items-center gap-4">
+              <img
+                src={p.img}
+                alt={p.title}
+                className="w-20 h-20 object-cover technical-border flex-shrink-0"
+              />
+              <div className="flex-1 sm:hidden">
+                <span className="font-label-md text-label-md text-secondary uppercase tracking-widest">{p.code}</span>
+                <h3 className="font-headline-md text-headline-md text-primary">{p.title}</h3>
+                <p className="font-body-md text-body-md text-on-surface-variant">
+                  ${p.price.toLocaleString('es-AR')}
+                  {!p.disponible && (
+                    <span className="ml-2 text-red-600 font-label-md text-label-md uppercase">Agotado</span>
+                  )}
+                </p>
+              </div>
+            </div>
+
+            <div className="hidden sm:block flex-1">
               <span className="font-label-md text-label-md text-secondary uppercase tracking-widest">{p.code}</span>
               <h3 className="font-headline-md text-headline-md text-primary">{p.title}</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant">${p.price.toLocaleString('es-AR')}</p>
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                ${p.price.toLocaleString('es-AR')}
+                {!p.disponible && (
+                  <span className="ml-2 text-red-600 font-label-md text-label-md uppercase">Agotado</span>
+                )}
+              </p>
             </div>
-            <Link
-              to={`/admin/editar/${p.id}`}
-              className="font-label-md text-label-md uppercase tracking-widest underline"
-            >
-              Editar
-            </Link>
-            <button
-              onClick={() => handleDelete(p.id)}
-              className="font-label-md text-label-md uppercase tracking-widest text-red-600 underline"
-            >
-              Borrar
-            </button>
+
+            <div className="flex gap-4 sm:gap-4">
+              <Link
+                to={`/admin/editar/${p.id}`}
+                className="font-label-md text-label-md uppercase tracking-widest underline"
+              >
+                Editar
+              </Link>
+              <button
+                onClick={() => handleDelete(p.id)}
+                className="font-label-md text-label-md uppercase tracking-widest text-red-600 underline"
+              >
+                Borrar
+              </button>
+            </div>
           </div>
         ))}
       </div>

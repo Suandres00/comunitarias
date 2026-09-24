@@ -49,11 +49,11 @@ app.get('/api/productos/:id', async (req, res) => {
 // POST - crear un producto nuevo
 app.post('/api/productos', async (req, res) => {
   try {
-    const { title, code, desc, price, img } = req.body
+    const { title, code, desc, price, img, disponible } = req.body
     const result = await db.query(
-      `INSERT INTO productos (title, code, "desc", price, img)
-       VALUES ($1, $2, $3, $4, $5) RETURNING *`,
-      [title, code, desc, price, img]
+      `INSERT INTO productos (title, code, "desc", price, img, disponible)
+       VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`,
+      [title, code, desc, price, img, disponible ?? true]
     )
     res.status(201).json(result.rows[0])
   } catch (err) {
@@ -65,11 +65,11 @@ app.post('/api/productos', async (req, res) => {
 // PUT - editar un producto existente
 app.put('/api/productos/:id', async (req, res) => {
   try {
-    const { title, code, desc, price, img } = req.body
+    const { title, code, desc, price, img, disponible } = req.body
     const result = await db.query(
-      `UPDATE productos SET title = $1, code = $2, "desc" = $3, price = $4, img = $5
-       WHERE id = $6 RETURNING *`,
-      [title, code, desc, price, img, req.params.id]
+      `UPDATE productos SET title = $1, code = $2, "desc" = $3, price = $4, img = $5, disponible = $6
+       WHERE id = $7 RETURNING *`,
+      [title, code, desc, price, img, disponible, req.params.id]
     )
     if (result.rows.length === 0) {
       return res.status(404).json({ error: 'Producto no encontrado' })
