@@ -19,13 +19,21 @@ const AdminPanel = () => {
     cargarProductos()
   }, [])
 
-  const handleDelete = (id) => {
-    const confirmar = window.confirm('¿Seguro que querés borrar este producto? Esta acción no se puede deshacer.')
-    if (!confirmar) return
+  const [productoABorrar, setProductoABorrar] = useState(null)
 
-    fetch(`http://localhost:3001/api/productos/${id}`, {
+  const pedirConfirmacion = (producto) => {
+    setProductoABorrar(producto)
+  }
+
+  const cancelarBorrado = () => {
+    setProductoABorrar(null)
+  }
+
+  const confirmarBorrado = () => {
+    fetch(`http://localhost:3001/api/productos/${productoABorrar.id}`, {
       method: 'DELETE',
     }).then(() => {
+      setProductoABorrar(null)
       cargarProductos()
     })
   }
@@ -107,7 +115,7 @@ const AdminPanel = () => {
                 Editar
               </Link>
               <button
-                onClick={() => handleDelete(p.id)}
+                onClick={() => pedirConfirmacion(p)}
                 className="font-label-md text-label-md uppercase tracking-widest text-red-600 underline"
               >
                 Borrar
@@ -116,6 +124,32 @@ const AdminPanel = () => {
           </div>
         ))}
       </div>
+      {productoABorrar && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
+          <div className="bg-white p-8 max-w-sm text-center technical-border industrial-shadow">
+            <h2 className="font-headline-md text-headline-md text-primary mb-4">
+              ¿Borrar producto?
+            </h2>
+            <p className="font-body-md text-body-md text-secondary mb-6">
+              Estás por borrar <strong>{productoABorrar.title}</strong>. Esta acción no se puede deshacer.
+            </p>
+            <div className="flex gap-4 justify-center">
+              <button
+                onClick={confirmarBorrado}
+                className="bg-red-600 text-white font-label-md text-label-md uppercase tracking-widest py-3 px-6 industrial-shadow technical-border"
+              >
+                Sí, borrar
+              </button>
+              <button
+                onClick={cancelarBorrado}
+                className="font-label-md text-label-md uppercase tracking-widest underline"
+              >
+                Cancelar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   )
 }
