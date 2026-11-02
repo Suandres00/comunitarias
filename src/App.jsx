@@ -13,6 +13,7 @@ import AdminLogin from './pages/AdminLogin'
 import RequireAdmin from './components/RequireAdmin'
 import AdminPanel from './pages/AdminPanel'
 import AdminProductForm from './pages/AdminProductForm'
+import { Analytics } from '@vercel/analytics/next';
 
 
 const App = () => {
@@ -34,6 +35,7 @@ const App = () => {
           <Route path="/admin/editar/:id" element={<RequireAdmin><AdminProductForm /></RequireAdmin>} />
         </Routes>
         <Footer />
+        <Analytics />
         {/* Botón flotante disponible en toda la web */}
         <WhatsAppButton />
       </BrowserRouter>
