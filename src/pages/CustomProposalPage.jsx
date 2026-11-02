@@ -41,7 +41,7 @@ const CustomProposalPage = () => {
         </div>
       </section>
 
-      <section className="section-gap-md px-8 max-w-[1280px] mx-auto py-20 border-t border-outline-variant">
+      <section className="section-gap-md px-8 max-w-[1600px] mx-auto py-20 border-t border-outline-variant">
         <h2 className="font-headline-xl text-headline-xl mb-12">Presenta tu propuesta</h2>
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-gutter gap-y-12">
           <div className="flex flex-col gap-2">
@@ -85,7 +85,7 @@ const CustomProposalPage = () => {
       </section>
 
       {/* Casos de Éxito / Productos */}
-      <section className="section-gap-lg px-8 max-w-[1280px] mx-auto py-16">
+      <section className="section-gap-lg px-8 max-w-[1600px] mx-auto py-16">
         <div className="flex justify-between items-end mb-16">
           <div>
             <h3 className="font-headline-lg text-headline-lg mb-2">Casos de Éxito</h3>
@@ -153,7 +153,7 @@ const CustomProposalPage = () => {
 
       {/* WhatsApp CTA */}
       <section className="section-gap-md px-8 py-20 bg-surface-container-low">
-        <div className="max-w-[1280px] mx-auto text-center">
+        <div className="max-w-[1600px] mx-auto text-center">
           <h2 className="font-headline-xl text-headline-xl mb-10">
             Sino tambien escribenos directamente a nuestro WhatsApp
           </h2>

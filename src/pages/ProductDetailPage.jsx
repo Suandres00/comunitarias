@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
+import { API_URL } from '../api'
 
 const ProductDetailPage = () => {
     const { id } = useParams()
@@ -8,7 +9,7 @@ const ProductDetailPage = () => {
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        fetch(`http://localhost:3001/api/productos/${id}`)
+        fetch(`${API_URL}/api/productos/${id}`)
             .then((res) => {
                 if (!res.ok) throw new Error('Producto no encontrado')
                 return res.json()
@@ -25,7 +26,7 @@ const ProductDetailPage = () => {
 
     if (loading) {
         return (
-            <main className="max-w-[1280px] mx-auto px-8 pt-28 pb-section-gap-lg text-center">
+            <main className="max-w-[1600px] mx-auto px-8 pt-[146px] pb-section-gap-lg text-center">
                 <p className="font-body-lg text-body-lg text-secondary">Cargando producto...</p>
             </main>
         )
@@ -33,7 +34,7 @@ const ProductDetailPage = () => {
 
     if (error || !product) {
         return (
-            <main className="max-w-[1280px] mx-auto px-8 pt-28 pb-section-gap-lg text-center">
+            <main className="max-w-[1600px] mx-auto px-8 pt-[146px] pb-section-gap-lg text-center">
                 <h1 className="font-display-lg text-display-lg text-primary mb-4">Producto no encontrado</h1>
                 <Link to="/productos" className="font-body-md text-body-md text-secondary underline">
                     Volver a Productos
@@ -47,7 +48,7 @@ const ProductDetailPage = () => {
     )
 
     return (
-        <main className="max-w-[1280px] mx-auto px-8 pt-28 pb-section-gap-lg">
+        <main className="max-w-[1600px] mx-auto px-8 pt-[146px] pb-section-gap-lg">
             <Link to="/productos" className="font-body-md text-body-md text-secondary underline mb-8 inline-block">
                 ← Volver a Productos
             </Link>

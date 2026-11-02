@@ -12,7 +12,7 @@ export function useIdleLogout() {
 
   useEffect(() => {
     const cerrarSesion = () => {
-      sessionStorage.removeItem('isAdmin')
+      sessionStorage.removeItem('adminToken')
       navigate('/admin/login')
     }
 
@@ -51,7 +51,7 @@ export function useIdleLogout() {
     clearTimeout(cierreRef.current)
     avisoRef.current = setTimeout(() => setMostrarAviso(true), TIEMPO_AVISO)
     cierreRef.current = setTimeout(() => {
-      sessionStorage.removeItem('isAdmin')
+      sessionStorage.removeItem('adminToken')
       navigate('/admin/login')
     }, TIEMPO_CIERRE)
   }

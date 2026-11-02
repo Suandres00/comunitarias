@@ -10,28 +10,29 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 !bg-navcolor border-outline-variant">
-      <nav className="flex justify-between items-center h-20 px-8 max-w-[1280px] mx-auto">
+    // Barra flotante tipo pastilla: el header no captura clics fuera del nav
+    <header className="fixed top-4 sm:top-6 left-0 right-0 z-50 px-4 pointer-events-none">
+      <nav className="pointer-events-auto max-w-[1900px] mx-auto flex justify-between items-center h-[85px] px-8 sm:px-12 rounded-full bg-navcolor/85   backdrop-blur-md shadow-[0_12px_40px_rgba(0,0,0,0.35)] border border-outline-variant/40">
         {/* Logo */}
         <Link to="/" className="flex items-center" onClick={() => setIsOpen(false)}>
           <img
             src={logo}
             alt="Karú Mapú Logo"
-            className="h-10 w-auto object-contain"
+            className="h-12 w-auto object-contain"
           />
         </Link>
 
         {/* Links Desktop */}
         <div className="hidden md:flex items-center gap-8">
           <Link
-            className={`font-label-md text-body-lg text-fontcolor transition-colors ${isActive('/') ? 'border-b-2 border-fontcolor' : ''
+            className={`font-label-md text-body-lg uppercase font-bold text-fontcolor transition-colors ${isActive('/') ? 'border-b-2 border-fontcolor' : ''
               }`}
             to="/"
           >
             Inicio
           </Link>
           <Link
-            className={`font-label-md text-body-lg text-fontcolor transition-colors ${isActive('/nosotros') ? 'border-b-2 border-fontcolor' : ''
+            className={`font-label-md text-body-lg uppercase font-bold text-fontcolor transition-colors ${isActive('/nosotros') ? 'border-b-2 border-fontcolor' : ''
               }`}
             to="/nosotros"
           >
@@ -41,7 +42,7 @@ const Navbar = () => {
           {/* Submenú Desktop */}
           <div className="relative group">
             <Link
-              className={`font-label-md text-body-lg text-fontcolor transition-colors flex items-center gap-1 ${isActive('/productos') || isActive('/productos-a-medida')
+              className={`font-label-md text-body-lg uppercase font-bold text-fontcolor transition-colors flex items-center gap-1 ${isActive('/productos') || isActive('/productos-a-medida')
                 ? 'border-b-2 border-fontcolor'
                 : ''
                 }`}
@@ -77,7 +78,7 @@ const Navbar = () => {
           </div>
 
           <Link
-            className={`font-label-md text-body-lg text-fontcolor transition-colors ${isActive('/servicios') ? 'border-b-2 border-fontcolor' : ''
+            className={`font-label-md text-body-lg uppercase font-bold text-fontcolor transition-colors ${isActive('/servicios') ? 'border-b-2 border-fontcolor' : ''
               }`}
             to="/servicios"
           >
@@ -99,7 +100,7 @@ const Navbar = () => {
         {/* Botón Hamburguesa Mobile */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-fontcolor focus:outline-none p-2"
+          className="md:hidden text-fontcolor focus:outline-none p-2 rounded-full"
           aria-label="Abrir menú"
         >
           <span className="material-symbols-outlined text-3xl">
@@ -108,13 +109,13 @@ const Navbar = () => {
         </button>
       </nav>
 
-      {/* Menú Desplegable Mobile */}
+      {/* Menú Desplegable Mobile (tarjeta flotante adaptada a la pastilla) */}
       {isOpen && (
-        <div className="md:hidden bg-background border-b border-outline-variant px-8 pt-4 pb-6 flex flex-col gap-4">
+        <div className="pointer-events-auto md:hidden max-w-[1500px] mx-auto mt-2 rounded-3xl bg-navcolor/90 backdrop-blur-md shadow-[0_12px_40px_rgba(0,0,0,0.35)] border border-outline-variant/40 px-4 py-4 flex flex-col gap-3">
           <Link
             to="/"
             onClick={() => setIsOpen(false)}
-            className={`font-label-md text-label-md text-primary py-2 ${isActive('/') ? 'font-bold border-b-2 border-primary' : ''
+            className={`font-label-md text-label-md uppercase font-bold text-fontcolor py-3 px-4 rounded-full ${isActive('/') ? 'font-bold border-b-2 border-primary' : ''
               }`}
           >
             Inicio
@@ -122,7 +123,7 @@ const Navbar = () => {
           <Link
             to="/nosotros"
             onClick={() => setIsOpen(false)}
-            className={`font-label-md text-label-md text-primary py-2 ${isActive('/nosotros') ? 'font-bold border-b-2 border-primary' : ''
+            className={`font-label-md text-label-md uppercase font-bold text-fontcolor py-3 px-4 rounded-full ${isActive('/nosotros') ? 'font-bold border-b-2 border-primary' : ''
               }`}
           >
             Sobre Nosotros
@@ -132,7 +133,7 @@ const Navbar = () => {
           <div className="flex flex-col">
             <button
               onClick={() => setMobileSubmenuOpen(!mobileSubmenuOpen)}
-              className="flex justify-between items-center font-label-md text-label-md text-primary py-2 w-full text-left"
+              className="flex justify-between items-center font-label-md text-label-md uppercase font-bold text-fontcolor py-3 px-4 w-full text-left"
             >
               <span>Productos</span>
               <span className="material-symbols-outlined text-[18px]">
@@ -141,18 +142,18 @@ const Navbar = () => {
             </button>
 
             {mobileSubmenuOpen && (
-              <div className="flex flex-col pl-4 gap-2 py-2 border-l-2 border-primary/20 my-1">
+              <div className="flex flex-col pl-4 gap-1 py-1 border-l-2 border-primary/20 my-1 ml-4">
                 <Link
                   to="/productos"
                   onClick={() => setIsOpen(false)}
-                  className="font-label-md text-sm text-primary py-1"
+                  className="font-label-md text-sm uppercase font-bold text-fontcolor py-2.5 px-3 rounded-full"
                 >
                   Todos los productos
                 </Link>
                 <Link
                   to="/productos-a-medida"
                   onClick={() => setIsOpen(false)}
-                  className="font-label-md text-sm text-primary py-1"
+                  className="font-label-md text-sm uppercase font-bold text-fontcolor py-2.5 px-3 rounded-full"
                 >
                   A medida
                 </Link>
@@ -163,7 +164,7 @@ const Navbar = () => {
           <Link
             to="/servicios"
             onClick={() => setIsOpen(false)}
-            className={`font-label-md text-label-md text-primary py-2 ${isActive('/servicios') ? 'font-bold border-b-2 border-primary' : ''
+            className={`font-label-md text-label-md uppercase font-bold text-fontcolor py-3 px-4 rounded-full ${isActive('/servicios') ? 'font-bold border-b-2 border-primary' : ''
               }`}
           >
             Servicios

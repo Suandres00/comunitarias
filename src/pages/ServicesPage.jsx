@@ -4,10 +4,10 @@ import { useScrollReveal } from "../hooks/useScrollReveal"
 const ServicesPage = () => {
   const section1Ref = useScrollReveal();
   return (
-    <main className="max-w-[1280px] mx-auto px-8 pt-28 pb-section-gap-md">
+    <main className="max-w-[1600px] mx-auto px-8 pt-[146px] pb-section-gap-md">
       <section
         ref={section1Ref}
-        className="reveal-hidden-left mb-24 flex flex-col items-center text-center">
+        className="reveal-hidden-left mb-40 flex flex-col items-center text-center">
         <div className="bg-white border border-outline-variant p-12 md:p-20 max-w-4xl technical-shadow-heavy">
           <h1 className="font-display-lg text-display-lg mb-6 text-primary">Nuestros Servicios</h1>
           <p className="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto">

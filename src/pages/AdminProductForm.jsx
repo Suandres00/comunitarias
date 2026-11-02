@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
+import { adminFetch } from '../api'
 
 const CLOUD_NAME = 'upj3yzbb'
 const UPLOAD_PRESET = 'ml_default'
@@ -28,10 +29,15 @@ const AdminProductForm = () => {
 
   useEffect(() => {
     if (esEdicion) {
-      fetch(`http://localhost:3001/api/productos/${id}`)
+      adminFetch(`http://localhost:3001/api/productos/${id}`)
         .then((res) => res.json())
         .then((data) => {
           setFormData(data)
+          setLoading(false)
+        })
+        .catch((err) => {
+          if (err.message === 'Sesión expirada') return
+          setError('No se pudo cargar el producto')
           setLoading(false)
         })
     }
@@ -82,20 +88,17 @@ const AdminProductForm = () => {
       : 'http://localhost:3001/api/productos'
     const method = esEdicion ? 'PUT' : 'POST'
 
-    fetch(url, {
+    adminFetch(url, {
       method,
-      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         ...formData,
         price: Number(formData.price),
       }),
     })
-      .then((res) => {
-        if (!res.ok) throw new Error('Error al guardar el producto')
-        return res.json()
-      })
-      .then(() => {
-        navigate('/admin')
+      .then(async (res) => {
+        const data = await res.json().catch(() => null)
+        if (!res.ok) throw new Error(data?.error || 'Error al guardar el producto')
+        navigate('/admin', { state: { guardado: esEdicion ? 'Producto actualizado ✓' : 'Producto creado ✓' } })
       })
       .catch((err) => {
         setError(err.message)
@@ -105,14 +108,14 @@ const AdminProductForm = () => {
 
   if (loading) {
     return (
-      <main className="max-w-[800px] mx-auto px-8 pt-28 pb-section-gap-lg text-center">
+      <main className="max-w-[800px] mx-auto px-8 pt-[146px] pb-section-gap-lg text-center">
         <p className="font-body-lg text-body-lg text-secondary">Cargando producto...</p>
       </main>
     )
   }
 
   return (
-    <main className="max-w-[800px] mx-auto px-4 sm:px-8 pt-28 pb-section-gap-lg">
+    <main className="max-w-[800px] mx-auto px-4 sm:px-8 pt-[146px] pb-section-gap-lg">
       <h1 className="font-display-lg text-display-lg text-primary mb-8">
         {esEdicion ? 'Editar producto' : 'Nuevo producto'}
       </h1>

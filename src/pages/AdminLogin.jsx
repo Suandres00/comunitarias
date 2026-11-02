@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { API_URL } from '../api'
 
 const AdminLogin = () => {
   const [password, setPassword] = useState('')
@@ -12,15 +13,15 @@ const AdminLogin = () => {
     setCargando(true)
     setError('')
 
-    fetch('http://localhost:3001/api/admin/login', {
+    fetch(`${API_URL}/api/admin/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ password }),
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.success) {
-          sessionStorage.setItem('isAdmin', 'true')
+        if (data.success && data.token) {
+          sessionStorage.setItem('adminToken', data.token)
           navigate('/admin')
         } else {
           setError('Contraseña incorrecta')
@@ -34,7 +35,7 @@ const AdminLogin = () => {
   }
 
   return (
-    <main className="max-w-[480px] mx-auto px-8 pt-28 pb-section-gap-lg">
+    <main className="max-w-[480px] mx-auto px-8 pt-[146px] pb-section-gap-lg">
       <div className="bg-surface-container-high py-12 px-8 industrial-shadow technical-border">
         <h1 className="font-display-md text-display-md text-primary mb-6 text-center">
           Panel de Administración

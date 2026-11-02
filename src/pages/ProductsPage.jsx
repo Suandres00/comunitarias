@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import { API_URL } from '../api'
 
 const ProductsPage = () => {
   const section1Ref = useScrollReveal()
@@ -11,8 +12,8 @@ const ProductsPage = () => {
 
   useEffect(() => {
     const url = busqueda
-      ? `http://localhost:3001/api/productos?buscar=${encodeURIComponent(busqueda)}`
-      : 'http://localhost:3001/api/productos'
+      ? `${API_URL}/api/productos?buscar=${encodeURIComponent(busqueda)}`
+      : `${API_URL}/api/productos`
 
     fetch(url)
       .then((res) => res.json())
@@ -28,7 +29,7 @@ const ProductsPage = () => {
 
   if (loading) {
     return (
-      <main className="max-w-[1280px] mx-auto px-8 pt-28 pb-section-gap-lg text-center">
+      <main className="max-w-[1600px] mx-auto px-8 pt-[146px] pb-section-gap-lg text-center">
         <p className="font-body-lg text-body-lg text-secondary">Cargando productos...</p>
       </main>
     )
@@ -36,14 +37,14 @@ const ProductsPage = () => {
 
   if (error) {
     return (
-      <main className="max-w-[1280px] mx-auto px-8 pt-28 pb-section-gap-lg text-center">
+      <main className="max-w-[1600px] mx-auto px-8 pt-[146px] pb-section-gap-lg text-center">
         <p className="font-body-lg text-body-lg text-secondary">{error}</p>
       </main>
     )
   }
 
   return (
-    <main className="max-w-[1280px] mx-auto px-8 pt-28 pb-section-gap-lg">
+    <main className="max-w-[1600px] mx-auto px-8 pt-[146px] pb-section-gap-lg">
       <section
         ref={section1Ref}
         className="reveal-hidden-left mb-24 flex flex-col items-center text-center">

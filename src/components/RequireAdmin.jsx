@@ -2,7 +2,7 @@ import { Navigate } from 'react-router-dom'
 import { useIdleLogout } from '../hooks/useIdleLogout'
 
 const RequireAdmin = ({ children }) => {
-  const isAdmin = sessionStorage.getItem('isAdmin') === 'true'
+  const isAdmin = Boolean(sessionStorage.getItem('adminToken'))
   const { mostrarAviso, seguirConectado } = useIdleLogout()
 
   if (!isAdmin) {

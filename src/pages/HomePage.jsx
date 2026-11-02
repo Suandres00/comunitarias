@@ -14,7 +14,7 @@ const HomePage = () => {
   const productRightRef = useScrollReveal()
 
   return (
-    <div className="mt-20 overflow-x-hidden">
+    <div className="mt-[104px] overflow-x-hidden">
 
       {/* Hero Section */}
       <section className="relative min-h-[819px] flex items-center justify-center overflow-hidden bg-background">
@@ -48,7 +48,7 @@ const HomePage = () => {
       {/* Sobre Nosotros: ENTRA DESDE LA IZQUIERDA */}
       <section
         ref={aboutSectionRef}
-        className="reveal-hidden-left py-section-gap-lg max-w-[1280px] mx-auto px-8"
+        className="reveal-hidden-left py-section-gap-lg max-w-[1600px] mx-auto px-8"
       >
         <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
           <div className="md:col-span-5">
@@ -79,7 +79,7 @@ const HomePage = () => {
 
       {/* Productos */}
       <section className="py-section-gap-lg bg-surface-container-low">
-        <div className="max-w-[1280px] mx-auto px-8">
+        <div className="max-w-[1600px] mx-auto px-8">
           <div className="flex justify-between items-end mb-16">
             <div>
               <h2 className="font-headline-xl text-headline-xl mb-4">Nuestros productos</h2>
@@ -128,7 +128,7 @@ const HomePage = () => {
         ref={bannerSectionRef}
         className="reveal-hidden-left py-20 px-8"
       >
-        <div className="max-w-[1280px] mx-auto bg-background border border-primary p-12 md:p-16 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="max-w-[1600px] mx-auto bg-background border border-primary p-12 md:p-16 flex flex-col md:flex-row justify-between items-center gap-8">
           <div>
             <h2 className="font-headline-lg text-headline-lg mb-2">
               ¿Tenes una idea para realizar con madera plástica?
@@ -151,7 +151,7 @@ const HomePage = () => {
         ref={customSectionRef}
         className="reveal-hidden-right bg-primary text-on-primary py-section-gap-lg"
       >
-        <div className="max-w-[1280px] mx-auto px-8">
+        <div className="max-w-[1600px] mx-auto px-8">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
             <div className="md:col-span-6 order-2 md:order-1">
               <div className="bg-surface-container-lowest/10 p-1 border border-on-primary/20 aspect-square">
