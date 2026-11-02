@@ -35,9 +35,9 @@ const App = () => {
           <Route path="/admin/editar/:id" element={<RequireAdmin><AdminProductForm /></RequireAdmin>} />
         </Routes>
         <Footer />
-        <Analytics />
         {/* Botón flotante disponible en toda la web */}
         <WhatsAppButton />
+        <Analytics />
       </BrowserRouter>
     </div>
   )
