@@ -13,7 +13,7 @@ import AdminLogin from './pages/AdminLogin'
 import RequireAdmin from './components/RequireAdmin'
 import AdminPanel from './pages/AdminPanel'
 import AdminProductForm from './pages/AdminProductForm'
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from '@vercel/analytics/react';
 
 
 const App = () => {
@@ -37,8 +37,8 @@ const App = () => {
         <Footer />
         {/* Botón flotante disponible en toda la web */}
         <WhatsAppButton />
-        <Analytics />
       </BrowserRouter>
+      <Analytics />
     </div>
   )
 }
