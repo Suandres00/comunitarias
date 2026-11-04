@@ -92,8 +92,9 @@ const Navbar = () => {
             href="https://api.whatsapp.com/send?phone=542954217616"
             target="_blank"
             rel="noopener noreferrer"
+            className="inline-flex items-center rounded-full bg-primary text-on-primary font-label-md text-label-md uppercase font-bold tracking-widest py-2.5 px-6 hover:opacity-90 transition-opacity"
           >
-
+            Contacto
           </a>
         </div>
 

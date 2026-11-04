@@ -47,21 +47,19 @@ const ProductsPage = () => {
     <main className="max-w-[1600px] mx-auto px-8 pt-[146px] pb-section-gap-lg">
       <section
         ref={section1Ref}
-        className="reveal-hidden-left mb-24 flex flex-col items-center text-center">
-        <div className="bg-white border border-outline-variant p-12 md:p-20 max-w-4xl technical-shadow-heavy">
-          <h1 className="font-display-lg text-display-lg mb-6 text-primary">Productos</h1>
-          <p className="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto">
-            Nuestros productos están hechos con la mejor madera plástica del mercado. Soluciones duraderas,
-            sustentables y de alta precisión para arquitectura moderna.
-          </p>
-        </div>
+        className="reveal-hidden-left mb-24 py-20 md:py-32 px-8 w-full text-center bg-surface-container-lowest">
+        <h1 className="font-display-lg text-display-lg md:text-[80px] mb-8 text-primary">Productos</h1>
+        <p className="max-w-2xl mx-auto font-body-lg text-body-lg text-secondary leading-relaxed">
+          Nuestros productos están hechos con la mejor madera plástica del mercado. Soluciones duraderas,
+          sustentables y de alta precisión para arquitectura moderna.
+        </p>
         <div className="mt-10 mb-4 w-full max-w-xl mx-auto">
           <input
             type="text"
             placeholder="Buscar por nombre o código..."
             value={busqueda}
             onChange={(e) => setBusqueda(e.target.value)}
-            className="w-full border border-outline-variant px-5 py-4 font-body-md text-body-md technical-border"
+            className="w-full border border-outline-variant rounded-full px-5 py-4 font-body-md text-body-md technical-border"
           />
         </div>
       </section>

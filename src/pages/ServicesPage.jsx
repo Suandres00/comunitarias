@@ -7,13 +7,11 @@ const ServicesPage = () => {
     <main className="max-w-[1600px] mx-auto px-8 pt-[146px] pb-section-gap-md">
       <section
         ref={section1Ref}
-        className="reveal-hidden-left mb-40 flex flex-col items-center text-center">
-        <div className="bg-white border border-outline-variant p-12 md:p-20 max-w-4xl technical-shadow-heavy">
-          <h1 className="font-display-lg text-display-lg mb-6 text-primary">Nuestros Servicios</h1>
-          <p className="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto">
-            Asesoramiento integral y ejecución de proyectos a medida con materiales de impacto ambiental positivo.
-          </p>
-        </div>
+        className="reveal-hidden-left mb-40 py-20 md:py-32 px-8 w-full text-center bg-surface-container-lowest">
+        <h1 className="font-display-lg text-display-lg md:text-[80px] mb-8 text-primary">Nuestros Servicios</h1>
+        <p className="max-w-2xl mx-auto font-body-lg text-body-lg text-secondary leading-relaxed">
+          Asesoramiento integral y ejecución de proyectos a medida con materiales de impacto ambiental positivo.
+        </p>
       </section>
       <div className="space-y-section-gap-lg">
         <article className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center group">

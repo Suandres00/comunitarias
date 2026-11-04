@@ -1,10 +1,29 @@
+import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { FaInstagram, FaWhatsapp, FaFacebook } from 'react-icons/fa'
 import { useScrollReveal } from '../hooks/useScrollReveal'
-import { products } from '../data/products';
+import { products as productosEstaticos } from '../data/products';
+import { API_URL } from '../api'
 
 const HomePage = () => {
   const navigate = useNavigate()
+
+  // Productos: se cargan desde la API; si falla, se usan los estáticos de respaldo
+  const [products, setProducts] = useState(productosEstaticos)
+
+  useEffect(() => {
+    fetch(`${API_URL}/api/productos`)
+      .then((res) => {
+        if (!res.ok) throw new Error('Error al cargar productos')
+        return res.json()
+      })
+      .then((data) => {
+        if (Array.isArray(data) && data.length > 0) setProducts(data)
+      })
+      .catch(() => {
+        // se mantiene la lista estática como respaldo
+      })
+  }, [])
 
   // 1. Declarás las referencias para cada sección
   const aboutSectionRef = useScrollReveal()

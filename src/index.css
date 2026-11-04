@@ -16,6 +16,14 @@ body {
   border: 1px solid #e2e2e2;
 }
 
+/* Botones redondeados en toda la página */
+button,
+a[class*="bg-primary"],
+a[class*="bg-red"],
+a[class*="industrial-shadow"] {
+  border-radius: 9999px;
+}
+
 .industrial-shadow {
   box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.05);
 }
