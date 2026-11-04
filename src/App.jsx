@@ -17,7 +17,7 @@ import AdminProductForm from './pages/AdminProductForm'
 
 const App = () => {
   return (
-    <div className="[zoom:0.9] overflow-x-hidden"> {/* Escala 90% + recorte de desbordes horizontales (animaciones reveal) */}
+    <div className="[zoom:0.81] overflow-x-hidden"> {/* Escala 81% (10% menos) + recorte de desbordes horizontales (animaciones reveal) */}
       <BrowserRouter>
         <ScrollToTop />
         <Navbar />
